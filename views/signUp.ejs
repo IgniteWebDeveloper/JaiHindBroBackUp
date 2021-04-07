@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/SignIn&SignUpStyling/signUp.css">
+</head>
+<body>
+ 
+    <div id="back">
+        <% include ./WebNavBarPartials/WebNavBarPartials.ejs%>
+        <% include ./MobNavBarPartials/MobNavBarLoginProcess.ejs%>
+     <div class="big">
+         <div class="imagecontainer">
+             <img src="../images/loginimages/Mask Group 182.png" alt="">
+         </div>
+         <div class="details">
+      <img class="welcome" src="../images/loginimages/Group 4953.svg" alt="">
+            <img id="rc" src="../images/loginimages/Mask Group 46.svg" alt="">
+            <img id="rc1" src="../images/loginimages/Mask Group 47.svg " alt="">
+              <div class="palletoverlay">
+            <div class="box">
+                <a href="/sign-in"><button id="btn1">Sign In</button></a>
+                <div class="line">
+                  <img src="../images/loginimages/Line 648.png" alt="">
+                </div>
+                <a href="/"><button id="btn2" >Sign Up</button></a>
+            </div> 
+            <div class="sign">
+                <button class="facebook"><img id="facebook" src="../images/loginimages/Icon awesome-facebook-square.svg" alt=""><h5>facebook</h5></button>
+                <button class="google"><img id="google" src="https://img.icons8.com/color/48/000000/google-logo.png" alt=""><h5>google</h5></button>
+             </div>
+             <div class="or">
+            </div>
+            <div class="switch">
+                <div class="signUp">
+                   <form id="signUpForm" action="/homepage">
+                      <input class="ipt" type="text"  placeholder="Full Name">
+                      <input class="ipt" type="text" placeholder="Email">
+                      <input class="ipt" type="password" placeholder="Create Password">
+                      <div class="gender">
+                          <h5>Select Gender :-</h5>
+                          <input id="radio1" type="radio" id="male" name="gender" value="male">
+                          <label id="human1" for="male">Male</label><br>
+                          <input id="radio2" type="radio" id="female" name="gender" value="female">
+                          <label id="human2" for="female">Female</label><br>
+                      </div>
+                  </form>
+                      <button id="continue">Continue</button>
+                </div>
+            </div>
+           
+         </div>
+     </div>    
+       </div>
+    </div>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        var signUpForm = document.querySelector('#signUpForm');
+        var continueBtn = document.querySelector('#continue');
+
+        continueBtn.addEventListener('click', function(){
+            signUpForm.submit();
+        });
+    </script>
+</body>
+</html>
+
+ 

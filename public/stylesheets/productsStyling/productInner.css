@@ -1,0 +1,385 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#back{
+    width: 100%;
+    height: 100%;
+    font-family: 'whitney';
+    /* background-color: red; */
+}
+.sidebar {
+    display: none;
+}
+.mobimage{
+  display: none;
+ }
+
+.searchbar {
+    display: none;
+}
+#mobNav{
+  display: none;
+}
+#webNav{
+  width: 100%;
+  min-height: 80px;
+  position: sticky;
+  top: 0px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  outline: none;
+  z-index: 999;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-shadow: 0 4px 5px  rgb(224, 223, 223);
+}
+
+#menu{
+  display: none;
+}
+
+.can{
+  display: flex;
+  align-items: center;
+}
+
+nav img{
+      width: 145px;
+      /* margin-left: 10px; */
+      margin-bottom: 5px;
+}
+
+nav .links{
+  min-height: inherit;
+  width: 450px;
+  margin-right: 500px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.links a{
+  text-decoration: none;
+  color: black;
+  font-family: 'whitney semibold';
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size: 15px;
+}
+
+.icon-head #bookmark{
+  width: 16px !important;
+  margin-top: 2px;
+  color: #707070;
+  margin-right: 6px;
+}
+
+#bag{
+  color: #707070;
+  width: 16px;
+}
+
+
+
+.icons{
+  display: flex;
+  min-height: 60px !important;
+  width: 140px;
+  margin-right: 20px;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: red; */
+}
+
+#find{
+  display: none;
+}
+
+#return{
+  display: none;
+}
+.search-box{
+  position: absolute;
+  height: 35px;
+  border-radius: 5px;
+  background-color:#ebebeb;
+  display: flex;
+  right: 250px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.search-box:hover > .search-text{
+  width: 240px;
+  padding: 0 6px;
+}
+
+.search-btn{
+  float: left;
+  width: 18px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn i{
+  outline: none;
+  text-decoration: none;
+  color: #858585;
+}
+
+.search-text{
+  border: none;
+  outline: none;
+  background: none;
+  float: right;
+  font-family: 'whitney';
+  padding: 0%;
+  color: rgb(131, 131, 131);
+  transition: 0.4s;
+  line-height: 40px;
+  font-size: 12px;
+  letter-spacing: .5px;
+  width: 0;
+}
+
+.icon-head{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+  min-height: inherit;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.icon-head:nth-child(4){
+  margin-left: -10px;
+}
+.icon-head i{
+  opacity: .7;
+}
+
+#profile{
+  width: 18px;
+}
+
+/* #pro{
+  margin-left: 7px;
+} */
+
+.icon-head h5{
+  font-family: 'whitney semibold';
+  text-transform: capitalize;
+  opacity: .9;
+  letter-spacing: .3px;
+  font-weight: initial;
+  font-size:12px;
+  color: #000000;
+}
+#mainPage{
+    width: 100%;
+    height: calc(100% - 80px);
+    /* background-color: rebeccapurple; */
+}
+#head{
+    width: 100%;
+    height: 10%;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    font-family: 'whitney';
+    /* background-color: greenyellow; */
+}
+#head h2{
+    font-size: 18px;
+    font-weight: 600;
+}
+#innerMainPage{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    padding: 0px 40px;
+    /* background-color: aqua; */
+}
+#leftImg{
+    width: 60%;
+    min-height: 100%;
+    /* background-color: red; */
+    /* overflow: hidden; */
+}
+.imgMain{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: gray; */
+}
+.imgMain:nth-child(2){
+    margin-top: 20px;
+}
+.imgMain img{
+    width: 48.5%;
+    height: 100%;
+}
+#rightDets{
+    width: 40%;
+    min-height: 100%;
+    padding-left: 20px;
+    /* background-color: rebeccapurple; */
+}
+#rightDets h1{
+    font-size: 30px;
+    font-weight: 600;
+    height: 11%;
+    /* background-color: red; */
+    border-bottom: 1px solid #D1D1D1;
+}
+#rightDets h2{
+    font-size: 26px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+#rightDets h6{
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 4px;
+    color: #03A685;
+}
+#size{
+    width: 100%;
+    height: 100px;
+    margin-top: 16px;
+    /* background-color: red; */
+}
+#size h3{
+    font-size: 18px;
+    font-weight: 600;
+}
+#sizePanel{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+}
+#sizePanel a{
+    text-decoration: none;
+}
+.sizeBtn{
+    width: 50px;
+    border-radius: 7px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    border: 1.5px solid #9F9F9F;
+}
+.sizeBtn h5{
+    color: #000000;
+    font-size: 15px;
+    font-weight: 500;
+}
+.sizeBtn:hover{
+    background-color: #ABCDFF;
+    border: none;
+    cursor: pointer;
+}
+#buttons{
+    width: 100%;
+    height: 100px;
+    /* background-color: #03A685; */
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+/* #buttons button{
+    color: whitee;
+} */
+#addToBag{
+    width: 45%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 45px;
+    background-color: #3280F5;
+    border-radius: 3px;
+    border: none;
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: 'whitney';
+    letter-spacing: 0.5px;
+}
+#addToBag img{
+    width: 15px;
+    margin-bottom: 2px;
+}
+#wishlist{
+    width: 40%;
+    height: 50px;
+    margin-left: 15px;
+    display: flex;
+    padding: 0px 50px;
+    align-items: center;
+    background-color: white;
+    font-size: 16px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-family: 'whitney';
+    justify-content: space-between;
+    border: 1.5px solid #9F9F9F;
+    outline-style: none;
+}
+#wishlist img{
+    width: 14px;
+    margin-bottom: 2px;
+}
+#detailing{
+    margin-top: 10px;
+    border-bottom: 1px solid #D1D1D1;
+    padding-bottom: 25px;
+}
+#detailing h5{
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 300;
+    color: #515151;
+}
+#productDesc{
+    margin-top: 25px;
+}
+#productDesc h3{
+    font-size: 17px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+#productDesc h3>i{
+    margin-left: 10px;
+    font-weight: 100;
+    font-size: 18px;
+    color: #707070;
+}
+#productDesc p{
+    margin-top: 15px;
+    width: 80%;
+    line-height: 25px;
+    font-size: 17px;
+    font-weight: 300;
+    color: #515151;
+}

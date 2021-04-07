@@ -1,0 +1,52 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/SignIn&SignUpStyling/phoneNumber.css">
+</head>
+<body>
+<div id="back">
+    <% include ./WebNavBarPartials/WebNavBarPartials.ejs%>
+<% include ./MobNavBarPartials/MobNavBarLoginProcess.ejs%>
+    <div id="mainPage">
+        <div id="left">
+            <img src="../images/loginimages/Mask Group 182.png" alt="">
+        </div>
+        <div id="right">
+            <img src="../images/loginimages/Mask Group 46.svg" alt="">
+            <div class="welcome">
+                <h3>Welcome to</h3>
+                <img src="../images/homePage/Logo.png" alt="">
+            </div>
+            <div id="mainBack">
+                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
+                <form action="/phonelogin" method="GET">
+                    <input id="inpt" name="phonenumber" type="tel" placeholder="10 Digit Mobile Number *" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==10) return false;" />
+                </form>
+                <button>CONTINUE</button>
+                <!-- <img src="../images/loginimages/2481155.png" alt=""> -->
+            </div>
+            <img id="bottomGreen" src="../images/loginimages/Mask Group 47.svg" alt="">
+        </div>
+    </div>
+</div>    
+    
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+    var OTPsendBTN = document.querySelector('#mainBack button');
+    var NumberForm = document.querySelector('#mainBack form');
+        
+    OTPsendBTN.addEventListener('click', function(){
+    NumberForm.submit();
+    });
+</script>
+    
+</body>
+</html>
+
+ 

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/ProfileStyling/contactUsStyle.css">
+</head>
+<body>
+    <div id="back">    
+        <% include ./WebNavBarPartials/WebNavBarPartials.ejs %>
+        <% include ./MobNavBarPartials/MobNavbarWIthBackBtn.ejs %>
+        <div id="mainPage">
+            <h2>Account</h2>
+            <h5>Lorem Ipsum</h5>
+            <div id="mainContentPage">
+                <div id="leftTabs">
+                    <div class="Tab">
+                    <a style="text-decoration: none;" href="/user-profile">
+                        <h3>Profile</h3>
+                    </a>
+                    </div>
+                    <div class="Tab">
+                    <a style="text-decoration: none;" href="/Orders">
+                        <h3>Orders</h3>
+                    </a>
+                    </div>
+                    <div class="Tab">
+                    <a style="text-decoration: none;" href="/track-order">
+                        <h3>Track your Order</h3>
+                    </a>
+                    </div>
+                    <div class="Tab">
+                    <a style="text-decoration: none;" href="/contact-us">
+                        <h3>Contact Us</h3>
+                    </a>
+                    </div>
+                    <div class="Tab">
+                    <a style="text-decoration: none;" href="/terms-of-use">
+                        <h3>Terms of Use</h3>
+                    </a>
+                    </div>
+                    <div class="Tab">
+                    <a style="text-decoration: none;" href="/privacy-policy">
+                        <h3>Privacy Policy</h3>
+                    </a>
+                    </div>
+                </div>
+                <div id="mainContent">
+                    <div id="rightContent">
+                        <h3>Contact Us</h3>
+                        <div id="contactHead">
+                            <h6>Please get in touch using the <b>"Contact Us"</b> option below.</h6>
+                        </div>
+                        <div id="mainDets">
+                            <div class="ctntUs">
+                                <a id="contactLink" href="#">
+                                    <div class="Icon">
+                                        <img src="../images/ContactUs/Icon ionic-ios-call.svg" alt="">
+                                    </div>
+                                    <div class="contactUsHead">
+                                        <h3>Call Now</h3>
+                                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing.</h4>
+                                    </div>    
+                                </a>
+                            </div>
+                            <div id="devider"></div>
+                            <div style="border: none !important;" class="ctntUs">
+                                <a id="WriteLink" href="#">
+                                    <div class="Icon">
+                                        <img src="../images/ContactUs/Icon feather-edit-3.svg" alt="">
+                                    </div>
+                                    <div class="contactUsHead">
+                                        <h3>Write to Us</h3>
+                                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing.</h4>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+        <div id="popUpback">
+            <div id="popUp">
+                <h3>Please call us on <b>+91 21210 55522</b></h3>
+                <h5>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h5>
+                <button id="popUpBtn">DONE</button>
+            </div>   
+        </div>
+        <div id="popUpWriteUs">
+            <div id="popUpForm">
+                <div id="Heading">
+                    <h4>Write To Us</h4>
+                    <i class="ri-close-circle-line"></i>
+                </div>
+                <h6>Have a question or comment? Use the form below to send us a message .</h6>
+                <form id="queryForm" action="/contact-us">
+                    <h6 class="inputTag">Full Name</h6>
+                    <input class="InputFields" type="text" placeholder="Enter Your Full Name*" required>
+                    <h6 class="inputTag">Mobile Number</h6>
+                    <input class="InputFields" type="text" placeholder="Enter Your Mobile Number*" required>
+                    <h6 class="inputTag">Email<span>*</span></h6>
+                    <input class="InputFields" type="email" placeholder="Enter Your Email ID*" required>
+                    <h6 class="inputTag">Comment<span>*</span></h6>
+                   <textarea class="InputFields" placeholder="Enter your comment here. . ." required></textarea>
+                   <button id="formSubmit">SUBMIT</button>
+                   <button id="formClose">CLOSE</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var contactLink = document.querySelector('#contactLink');
+        var popUpback = document.querySelector('#popUpback');
+        var popUp = document.querySelector('#popUp');
+        var popUpBtn = document.querySelector('#popUpBtn');
+        var formSubmit = document.querySelector('#formSubmit');
+        var WriteLink = document.querySelector('#WriteLink');
+        var popUpWriteUs = document.querySelector('#popUpWriteUs');
+        var formSubmit = document.querySelector('#formSubmit');
+        var HeadingBtn = document.querySelector('#Heading i');
+        var formClose = document.querySelector('#formClose');
+
+        contactLink.addEventListener('click', function(){
+            popUp.style.display = 'flex';       
+            popUpback.style.display = 'initial';
+        });
+
+        popUpBtn.addEventListener('click', function(){
+            popUp.style.display = 'none';
+            popUpback.style.display = 'none';
+        });
+        popUpback.addEventListener('click', function(){
+            popUp.style.display = 'none';
+            popUpback.style.display = 'none';
+        });
+        WriteLink.addEventListener('click', function(){
+            popUpWriteUs.style.display = 'initial';
+        });
+        formSubmit.addEventListener('click', function(){
+            popUpWriteUs.style.display = 'none';
+        });
+        HeadingBtn.addEventListener('click', function(){
+            popUpWriteUs.style.display = 'none';
+        });
+        formClose.addEventListener('click', function(){
+            popUpWriteUs.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

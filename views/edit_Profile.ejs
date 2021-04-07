@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/ProfileStyling/editProfileStyle.css">
+</head>
+<body>
+<div id="back">    
+    <% include ./WebNavBarPartials/WebNavBarPartials.ejs %>
+    <% include ./MobNavBarPartials/MobNavbarWIthBackBtn.ejs %>
+    <div id="mainPage">
+        <h2>Account</h2>
+        <h5>Lorem Ipsum</h5>
+        <div id="mainContentPage">
+            <div id="leftTabs">
+                <div class="Tab">
+                <a style="text-decoration: none;" href="/edit-profile">
+                    <h3>Profile</h3>
+                </a>
+                </div>
+                <div class="Tab">
+                <a style="text-decoration: none;" href="/Orders">
+                    <h3>Orders</h3>
+                </a>
+                </div>
+                <div class="Tab">
+                <a style="text-decoration: none;" href="/track-order">
+                    <h3>Track your Order</h3>
+                </a>
+                </div>
+                <div class="Tab">
+                <a style="text-decoration: none;" href="/contact-us">
+                    <h3>Contact Us</h3>
+                </a>
+                </div>
+                <div class="Tab">
+                <a style="text-decoration: none;" href="/terms-of-use">
+                    <h3>Terms of Use</h3>
+                </a>
+                </div>
+                <div class="Tab">
+                <a style="text-decoration: none;" href="/privacy-policy">
+                    <h3>Privacy Policy</h3>
+                </a>
+                </div>
+            </div>
+            <div id="rightContent">
+                <div id="rightInner1">
+                    <h3>Edit Profile</h3>
+                    <div id="rightInner2">
+                        <div id="mobNo">
+                            <div id="leftNo">
+                                <h6>Mobile Number*</h6>
+                                <h2>99633 45652<i class="ri-checkbox-circle-fill"></i></h2>
+                            </div>
+                            <div id="rightBtn">
+                                <a href="/phone-number-page">change</a>
+                            </div>
+                        </div>
+                        <form id="orderDetsForm" action="/user-profile">
+                            <h6 class="inputTag">Full Name</h6>
+                            <input class="InputFields" type="text" value="Lorem Ipsum" placeholder="Enter Your Full Name*">
+                            <h6 class="inputTag">Email</h6>
+                            <input class="InputFields" type="text" value="forexpample@gmail.com" placeholder="Enter Your Mobile Number*">
+                            <h6 class="inputTag">Gender</h6>
+                            <div style="display: flex; align-items: center;padding: 0px;" class="InputFields">
+                                <div id="male">
+                                    <input id="maleCheckbox" type="radio" checked name="gender" id="male"> 
+                                    <label for="m">Male</label>
+                                </div>
+                                <div id="female">
+                                    <input type="radio" name="gender" id="female"> 
+                                    <label for="f">Female</label>
+                                </div>
+                            </div>
+                            <h6 class="inputTag">Pin Code</h6>
+                            <input class="InputFields" type="text" value="462001" placeholder="Enter Your Pin Code*">
+                            <h6 class="inputTag">Address</h6>
+                            <input class="InputFields" type="text" placeholder="Address (House No, Building, Street, Area)**">
+                            <h6 class="inputTag">Locality</h6>
+                            <input class="InputFields" type="text" placeholder="Enter Your Locality*">
+                            <div id="stateCity">
+                                <select onchange="print_city('state', this.selectedIndex);" id="sts" name ="stt" class="form-control" required></select>
+                                <select id ="state" class="form-control" required></select>
+                            </div>
+                        </form>
+                        <a id="saveDets">SAVE DETAILS</a>
+                        <a id="forgotPass" href="/forgot-Password">CHANGE PASSWORD</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../javascripts/cities.js"></script>
+<script language="javascript">print_state("sts");</script>
+<script>
+    var male = document.querySelector('#male');
+    var maleCheckbox = document.querySelector('#maleCheckbox');
+
+    male.addEventListener('click', function(){
+        maleCheckbox.checked();
+    });
+</script>
+<script>
+    var saveDets = document.querySelector('#saveDets');
+    var orderDetsForm = document.querySelector('#orderDetsForm');
+
+    saveDets.addEventListener('click', function(){
+        orderDetsForm.submit();
+    });
+</script>
+</body>
+</html>

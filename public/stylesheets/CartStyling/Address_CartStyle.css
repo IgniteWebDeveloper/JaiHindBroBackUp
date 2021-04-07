@@ -1,0 +1,883 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#back{
+    height: 100%;
+    min-width: 100%;
+}
+#mainPage{
+    width: 100%;
+    height: calc(100% - 60px);
+    /* background-color: red; */
+    /* position: relat  ive; */
+}
+#process_trail{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 40%;
+    height: 30px;
+    /* background-color: yellow; */
+    margin-top: 40px;
+    font-family: 'Whitney light';
+    font-size: 18px;
+}
+.step1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.step1 h4{
+    padding: 20px;
+    color: #7E7E7E;
+}
+.step2 h4{
+    color: #5ACEAA;
+    letter-spacing: 2px;
+}
+.line{
+    width: 100%;
+    height: 3px;
+    border-radius: 20%;
+    margin-top: 2px;
+    background-color: #5ACEAA;
+}
+.dashed_line{
+    width: 40px;
+  border-top: 1px dashed gray;
+}
+#process_trail a{
+    text-decoration: none;
+    color: #7E7E7E;
+}
+.step1:nth-child(3) h4 ,.step1:nth-child(5)  h4{
+    color: #7E7E7E;
+}
+#mainPage>h2{
+    font-family: 'Whitney semibold';
+    margin-top: 50px;
+    padding-left: 150px;
+}
+#back .horizontal_line{
+    width: 100%;
+    min-height: 1px;
+    position: absolute;
+    background-color: #d4d5d9;
+    top: 30%;
+}
+#mainContentPages{
+    width: 100%;
+    min-height: 100%;
+    /* background-color: #5ACEAA   ; */
+    border-top: 1px solid #d4d5d9;
+    display: flex;
+    padding-left: 150px !important;
+    margin-top: 23px;
+}
+#leftPage{
+    width: 60%;
+    min-height: 100%;
+    padding-top: 25px;
+    /* background-color: #5ACEAA; */
+    border-right: 1px solid #d4d5d9;
+}
+#numberofItems{
+    font-family: 'Whitney medium';
+    font-size: 16px;
+    color: #86878B;
+}
+.AddressMain{
+    width: 95%;
+    min-height: 97%;
+    /* background-color: red; */
+    border: 1px solid #d4d5d9;
+    padding: 20px;
+}
+.AddressMain form{
+    width: 100%;
+    height: 100%;
+    
+}
+.inputHead{
+    text-transform: uppercase;
+    font-family: 'Whitney';
+    font-weight: 400;
+    font-size: 16px;
+}
+.inputTag{
+    margin-top: 25px;
+    font-weight: 100;
+    font-size: 14px;
+    font-family: 'Whitney';
+}
+.InputFields{
+    margin-top: 7px;
+    width: 90%;
+    height: 50px;
+    padding: 0px 20px;
+    border: 1px solid #d4d5d9;
+    border-radius: 0;
+    font-family: 'Whitney';
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+    letter-spacing: 1.5px;
+    outline-color: #1673FF;
+    /* outline-style: auto; */
+}
+.InputFields::placeholder{
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 1px;
+    font-family: 'Whitney';
+}
+.AddressMain form .inputHead:nth-child(6){
+    margin-top: 30px;
+}
+#stateCity{
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+#stateCity select{
+    width: 40%;
+    height: 50px;
+    padding: 0px 10px;
+    border: 1px solid #d4d5d9;
+    font-family: 'Whitney';
+    font-weight: 400;
+    outline-color: #1673FF;
+    font-size: 16px;
+}
+#stateCity select option{
+    font-family: 'Whitney';
+    font-weight: 400;
+    font-size: 16px;
+    padding: 15px 5px;
+}
+#stateCity select:nth-child(1){
+    margin-right: 70px;
+}
+#rightPage{
+    /* margin-top: -26px; */
+    position: relative;
+    width: 40%;
+    height: 100%;
+    padding-top: 25px;
+    padding-left: 40px;
+    /* background-color: rebeccapurple; */
+}
+#rightPage h3{
+    font-family: 'Whitney light';
+    font-size: 16px;
+    color: #363636;
+}
+#totalAmount{
+    width: 60%;
+    /* background-color: rebeccapurple; */
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Whitney SemiBold';
+    font-size: 18px;
+    color: black;
+    margin-bottom: 30px;
+}
+#rightPage>a{
+    text-decoration: none;
+}
+#ContactUsLink{
+    position: absolute;
+    top: 120%;
+    right: 38%;
+    font-family: 'Whitney HTF semibold';
+    font-size: 15px;
+    color: black;
+}
+#placeOrder{
+    width: 60%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#0066FF;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px #00000029;
+    cursor: pointer;
+}
+#rightPage a:hover #placeOrder{
+    background-color: #1673FF;
+}
+#placeOrder h4{
+    font-family: 'Whitney';
+    font-weight: 400;
+    font-size: 17px;
+    color: white;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+#placeOrder img{
+    height: 24px;
+}
+#mobNav{
+    display: none;
+}
+#bottomNav{
+    display: none;
+}
+@media(max-width:393px){
+    #back{
+        max-width: 100%;
+        height: 100%;
+        scroll-behavior: smooth;
+    }
+    #webNav{
+     display: none;
+    }
+    #mobNav{
+        width: 100%;
+        height: 54px;
+        padding: 0px 20px ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 0 4px 5px  rgb(224, 223, 223);
+        z-index: 99999;
+        position: fixed;
+        top: 0;
+
+    }
+    .logo1 i{
+        font-size: 25px;
+        font-weight: 500;
+    }
+    .icons1{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* background-color: red; */
+        width: 80px;
+    }
+    #find1{
+        font-size: 25px;
+        font-weight: 500;
+    }
+    #book{
+        color: rgb(0, 0, 0);
+        width: 20px;
+        margin-top: 5px;
+        /* margin-left: -0.5px; */
+    }
+    #mainPage{
+        padding: 0px 20px !important;
+        scroll-behavior: smooth;
+        min-height: 100%;
+    }
+    #process_trail{
+        width: 83%;
+        margin-top: 70px;
+        font-size: 15px;
+    }
+    .dashed_line{
+        width: 30px;
+    }
+    #mainPage>h2{
+        padding-left: 0px;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    #leftPage{
+        width: 100%;
+        padding-top: 15px;
+        border-top: 1px solid #d4d5d9;
+        border-right: none;
+    }
+    #mainContentPages{
+        padding-left: 0px !important; 
+        flex-direction: column;
+    }
+    .AddressMain{
+        width: 100%;
+        padding: 12px;
+    }
+    .InputFields{
+       width: 100%;
+       letter-spacing: 0.5px;
+    }
+    #stateCity{
+        display: flex;
+    } 
+    #stateCity select{
+        width: 49%;
+        height: 40px;
+    }
+    #stateCity select:nth-child(1){
+        margin-right: 25px;
+    }
+    .step1 h4{
+        padding: 0px;
+    }
+    #rightPage{
+        margin-top: 36px;
+        padding-top: 10px;
+        width: 100%;
+        height: 50%;
+        padding-left: 10px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        scroll-behavior: smooth;
+        margin-bottom: 150px;
+    }
+    #rightPage #placeOrder{
+        display: none;
+    }
+    #bottomNav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+        width: 100%;
+        height: 65px;
+        background-color: white;
+        box-shadow: 4px 0px 15px  rgb(224, 223, 223);
+        z-index: 99999;
+        position: fixed;
+        bottom: 0;
+    }
+    .priceDets h3{
+    font-family: 'Whitney Semibold';
+    font-size: 24px;
+    margin-bottom: 5px;
+    }
+    .priceDets a{
+        text-decoration: none;
+        font-family: 'Whitney';
+        font-weight: 500;
+        color: #0066FF;
+        scroll-behavior: smooth;
+        letter-spacing: 0.5px;
+    }
+    #placeOrd{
+        text-decoration: none;
+        width: 55%;
+    }
+    #placeOrder{
+        width: 55%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:#0066FF;
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px #00000029;
+    }
+    #horizontal_line{
+        display: none;
+    }
+    #ContactUsLink{
+        top: 120%;
+        right: 0;
+    }
+
+}
+
+
+@media(max-width:411px){
+    #back{
+        max-width: 100%;
+        height: 100%;
+        scroll-behavior: smooth;
+    }
+    #webNav{
+     display: none;
+    }
+    #mobNav{
+        width: 100%;
+        height: 54px;
+        padding: 0px 20px ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 0 4px 5px  rgb(224, 223, 223);
+        z-index: 99999;
+        position: fixed;
+        top: 0;
+
+    }
+    .logo1 i{
+        font-size: 25px;
+        font-weight: 500;
+    }
+    .icons1{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* background-color: red; */
+        width: 80px;
+    }
+    #find1{
+        font-size: 25px;
+        font-weight: 500;
+    }
+    #book{
+        color: rgb(0, 0, 0);
+        width: 20px;
+        margin-top: 5px;
+        /* margin-left: -0.5px; */
+    }
+    #mainPage{
+        padding: 0px 20px !important;
+        scroll-behavior: smooth;
+        min-height: 100%;
+    }
+    #process_trail{
+        width: 83%;
+        margin-top: 70px;
+        font-size: 15px;
+    }
+    .dashed_line{
+        width: 30px;
+    }
+    #mainPage>h2{
+        padding-left: 0px;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    #leftPage{
+        width: 100%;
+        padding-top: 15px;
+        border-top: 1px solid #d4d5d9;
+        border-right: none;
+    }
+    #mainContentPages{
+        padding-left: 0px !important; 
+        flex-direction: column;
+    }
+    .AddressMain{
+        width: 100%;
+        padding: 12px;
+    }
+    .InputFields{
+       width: 100%;
+       letter-spacing: 0.5px;
+    }
+    #stateCity{
+        display: flex;
+    } 
+    #stateCity select{
+        width: 49%;
+        height: 40px;
+    }
+    #stateCity select:nth-child(1){
+        margin-right: 25px;
+    }
+    .step1 h4{
+        padding: 0px;
+    }
+    #rightPage{
+        margin-top: 36px;
+        padding-top: 10px;
+        width: 100%;
+        height: 50%;
+        padding-left: 10px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        scroll-behavior: smooth;
+        margin-bottom: 150px;
+    }
+    #rightPage #placeOrder{
+        display: none;
+    }
+    #bottomNav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+        width: 100%;
+        height: 65px;
+        background-color: white;
+        box-shadow: 4px 0px 15px  rgb(224, 223, 223);
+        z-index: 99999;
+        position: fixed;
+        bottom: 0;
+    }
+    .priceDets h3{
+    font-family: 'Whitney Semibold';
+    font-size: 24px;
+    margin-bottom: 5px;
+    }
+    .priceDets a{
+        text-decoration: none;
+        font-family: 'Whitney';
+        font-weight: 500;
+        color: #0066FF;
+        scroll-behavior: smooth;
+        letter-spacing: 0.5px;
+    }
+    #placeOrd{
+        text-decoration: none;
+        width: 55%;
+    }
+    #placeOrder{
+        width: 55%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:#0066FF;
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px #00000029;
+    }
+    #horizontal_line{
+        display: none;
+    }
+    #ContactUsLink{
+        top: 120%;
+        right: 0;
+    }
+
+}
+
+
+@media(max-width:16cm){
+    #back{
+        max-width: 100%;
+        height: 100%;
+        scroll-behavior: smooth;
+    }
+    #webNav{
+     display: none;
+    }
+    #mobNav{
+        width: 100%;
+        height: 54px;
+        padding: 0px 20px ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 0 4px 5px  rgb(224, 223, 223);
+        z-index: 99999;
+        position: fixed;
+        top: 0;
+
+    }
+    .logo1 i{
+        font-size: 25px;
+        font-weight: 500;
+    }
+    .icons1{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* background-color: red; */
+        width: 80px;
+    }
+    #find1{
+        font-size: 25px;
+        font-weight: 500;
+    }
+    #book{
+        color: rgb(0, 0, 0);
+        width: 20px;
+        margin-top: 5px;
+        /* margin-left: -0.5px; */
+    }
+    #mainPage{
+        padding: 0px 20px !important;
+        scroll-behavior: smooth;
+        min-height: 100%;
+    }
+    #process_trail{
+        width: 83%;
+        margin-top: 70px;
+        font-size: 15px;
+    }
+    .dashed_line{
+        width: 30px;
+    }
+    #mainPage>h2{
+        padding-left: 0px;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    #leftPage{
+        width: 100%;
+        padding-top: 15px;
+        border-top: 1px solid #d4d5d9;
+        border-right: none;
+    }
+    #mainContentPages{
+        padding-left: 0px !important; 
+        flex-direction: column;
+    }
+    .AddressMain{
+        width: 100%;
+        padding: 12px;
+    }
+    .InputFields{
+       width: 100%;
+       letter-spacing: 0.5px;
+    }
+    #stateCity{
+        display: flex;
+    } 
+    #stateCity select{
+        width: 49%;
+        height: 40px;
+    }
+    #stateCity select:nth-child(1){
+        margin-right: 25px;
+    }
+    .step1 h4{
+        padding: 0px;
+    }
+    #rightPage{
+        margin-top: 36px;
+        padding-top: 10px;
+        width: 100%;
+        height: 50%;
+        padding-left: 10px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        scroll-behavior: smooth;
+        margin-bottom: 150px;
+    }
+    #rightPage #placeOrder{
+        display: none;
+    }
+    #bottomNav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+        width: 100%;
+        height: 65px;
+        background-color: white;
+        box-shadow: 4px 0px 15px  rgb(224, 223, 223);
+        z-index: 99999;
+        position: fixed;
+        bottom: 0;
+    }
+    .priceDets h3{
+    font-family: 'Whitney Semibold';
+    font-size: 24px;
+    margin-bottom: 5px;
+    }
+    .priceDets a{
+        text-decoration: none;
+        font-family: 'Whitney';
+        font-weight: 500;
+        color: #0066FF;
+        scroll-behavior: smooth;
+        letter-spacing: 0.5px;
+    }
+    #placeOrd{
+        text-decoration: none;
+        width: 55%;
+    }
+    #placeOrder{
+        width: 55%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:#0066FF;
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px #00000029;
+    }
+    #horizontal_line{
+        display: none;
+    }
+    #ContactUsLink{
+        top: 120%;
+        right: 0;
+    }
+
+}
+
+
+@media(max-width:20cm){
+    #back{
+        max-width: 100%;
+        height: 100%;
+        scroll-behavior: smooth;
+    }
+    #webNav{
+     display: none;
+    }
+    #mobNav{
+        width: 100%;
+        height: 54px;
+        padding: 0px 20px ;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 0 4px 5px  rgb(224, 223, 223);
+        z-index: 99999;
+        position: fixed;
+        top: 0;
+
+    }
+    .logo1 i{
+        font-size: 25px;
+        font-weight: 500;
+    }
+    .icons1{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* background-color: red; */
+        width: 80px;
+    }
+    #find1{
+        font-size: 25px;
+        font-weight: 500;
+    }
+    #book{
+        color: rgb(0, 0, 0);
+        width: 20px;
+        margin-top: 5px;
+        /* margin-left: -0.5px; */
+    }
+    #mainPage{
+        padding: 0px 20px !important;
+        scroll-behavior: smooth;
+        min-height: 100%;
+    }
+    #process_trail{
+        width: 83%;
+        margin-top: 70px;
+        font-size: 15px;
+    }
+    .dashed_line{
+        width: 30px;
+    }
+    #mainPage>h2{
+        padding-left: 0px;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    #leftPage{
+        width: 100%;
+        padding-top: 15px;
+        border-top: 1px solid #d4d5d9;
+        border-right: none;
+    }
+    #mainContentPages{
+        padding-left: 0px !important; 
+        flex-direction: column;
+    }
+    .AddressMain{
+        width: 100%;
+        padding: 12px;
+    }
+    .InputFields{
+       width: 100%;
+       letter-spacing: 0.5px;
+    }
+    #stateCity{
+        display: flex;
+    } 
+    #stateCity select{
+        width: 49%;
+        height: 40px;
+    }
+    #stateCity select:nth-child(1){
+        margin-right: 25px;
+    }
+    .step1 h4{
+        padding: 0px;
+    }
+    #rightPage{
+        margin-top: 36px;
+        padding-top: 10px;
+        width: 100%;
+        height: 50%;
+        padding-left: 10px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        scroll-behavior: smooth;
+        margin-bottom: 150px;
+    }
+    #rightPage #placeOrder{
+        display: none;
+    }
+    #bottomNav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+        width: 100%;
+        height: 65px;
+        background-color: white;
+        box-shadow: 4px 0px 15px  rgb(224, 223, 223);
+        z-index: 99999;
+        position: fixed;
+        bottom: 0;
+    }
+    .priceDets h3{
+    font-family: 'Whitney Semibold';
+    font-size: 24px;
+    margin-bottom: 5px;
+    }
+    .priceDets a{
+        text-decoration: none;
+        font-family: 'Whitney';
+        font-weight: 500;
+        color: #0066FF;
+        scroll-behavior: smooth;
+        letter-spacing: 0.5px;
+    }
+    #placeOrd{
+        text-decoration: none;
+        width: 55%;
+    }
+    #placeOrder{
+        width: 55%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:#0066FF;
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px #00000029;
+    }
+    #horizontal_line{
+        display: none;
+    }
+    #ContactUsLink{
+        top: 120%;
+        right: 0;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

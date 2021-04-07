@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/CartStyling/CartStyle.css">
+    <title>Document</title>
+</head>
+<body>
+   
+<div id="back">
+    <% include ./WebNavBarPartials/WebNavBarPartials.ejs %>
+
+        <nav id="mobNav">
+            <div class="logo1">
+                <i  class="ri-arrow-left-line"></i>
+                <img src=".../images/otpimage/ideaa.png" alt="">
+            </div>
+            <div class="icons1">
+                    <i id="find1" class="ri-search-line"></i>
+                    <img id="book" src="../images/otpimage/Icon feather-bookmark.png" alt="">
+            </div>
+        </nav>
+        <div id="mainPage">
+                <div id="process_trail">
+                    <div class="step1">
+                        <h4>BAG</h4>
+                        <div class="line"></div>
+                    </div>
+                    <hr class="dashed_line">
+                    <a href="/add-address">
+                        <div class="step1">
+                            <h4>ADDRESS</h4>
+                        </div>
+                    </a>
+                    <hr class="dashed_line">
+                    <div class="step1">
+                        <h4>PAYMENT </h4>
+                    </div> 
+                </div>
+            <h2>We think you chose the right things to shop from us</h2>
+            <div id="mainContentPages">
+                <div id="leftPage">
+                    <h3 id="shoppingHead">My Shopping Bag <span id="numberofItems">(2 Items)</span></h3>
+                    <div class="productMain">
+                        <div class="product">
+                            <div class="leftImg">
+                                <img src="../images/CartImages/Image.png" alt="">
+                            </div>
+                            <div class="rightDetails">
+                                <h2>Lorem Ipsum</h2>
+                                <div class="sizeprize">
+                                    <div id="dropDown">
+                                        <select onchange="window.location.href = this.value">
+                                        <option value="#" selected="selected"><h6>Qty:</h6> 1</option>
+                                        <option value="#"><h6>Qty:</h6> 2</option>
+                                        <option value="#"><h6>Qty:</h6> 3</option>
+                                        <option value="#"><h6>Qty:</h6> 4</option>
+                                        <option value="#"><h6>Qty:</h6> 5</option>
+                                        <option value="#"><h6>Qty:</h6> 6</option>
+                                        <option value="#"><h6>Qty:</h6> 7</option>
+                                        <option value="#"><h6>Qty:</h6> 8</option>
+                                        <option value="#"><h6>Qty:</h6> 9</option>
+                                        <option value="#"><h6>Qty:</h6> 10</option>
+                                      </select>
+                                    </div>
+                                    <h4>Rs. 500</h4>
+                                </div>
+                                <div class="aLine">
+                                    <h4>100% sanitized products will Deliver</h4>
+                                    <img src="../images/CartImages/Group 5017.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <div class="leftbtn">
+                                <a href="/Remove-product-from-cart">REMOVE</a>
+                            </div>
+                            <div class="rightbtn">
+                                <a href="/wishlist">Add more from Wishlist</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="productMain">
+                        <div class="product">
+                            <div class="leftImg">
+                                <img src="../images/CartImages/Image.png" alt="">
+                            </div>
+                            <div class="rightDetails">
+                                <h2>Lorem Ipsum</h2>
+                                <div class="sizeprize">
+                                    <div id="dropDown">
+                                        <select onchange="window.location.href = this.value">
+                                        <option value="#" selected="selected"><h6>Qty:</h6> 1</option>
+                                        <option value="#"><h6>Qty:</h6> 2</option>
+                                        <option value="#"><h6>Qty:</h6> 3</option>
+                                        <option value="#"><h6>Qty:</h6> 4</option>
+                                        <option value="#"><h6>Qty:</h6> 5</option>
+                                        <option value="#"><h6>Qty:</h6> 6</option>
+                                        <option value="#"><h6>Qty:</h6> 7</option>
+                                        <option value="#"><h6>Qty:</h6> 8</option>
+                                        <option value="#"><h6>Qty:</h6> 9</option>
+                                        <option value="#"><h6>Qty:</h6> 10</option>
+                                      </select>
+                                    </div>
+                                    <h4>Rs. 500</h4>
+                                </div>
+                                <div class="aLine">
+                                    <h4>100% sanitized products will Deliver</h4>
+                                    <img src="../images/CartImages/Group 5017.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <div class="leftbtn">
+                                <a href="/Remove-product-from-cart">REMOVE</a>
+                            </div>
+                            <div class="rightbtn">
+                                <a href="/wishlist">Add more from Wishlist</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="rightPage">
+                    <h3>Price Details (2 Items)</h3>
+                    <div id="totalAmount">
+                        <h5>Total Amount to Pay</h5>
+                        <h5>₹ 1000</h5>
+                    </div>
+                    <a href="/add-address">
+                        <div id="placeOrder">
+                            <h4>PLACE ORDER</h4>
+                            <img src="../images/CartImages/Group 5020.png" alt="">
+                        </div>
+                    </a>    
+                </div>
+            </div>
+        </div>
+        <div class="horizontal_line"></div>
+        <div id="bottomNav">
+            <div class="priceDets">
+                <h3>₹ 1000</h3>
+                <a href="#rightPage">View Details</a>
+            </div>
+            <a id="placeOrd" href="/add-address">
+                <div id="placeOrder">
+                    <h4>PLACE ORDER</h4>
+                    <img src="../images/CartImages/Group 5020.png" alt="">
+                </div>
+            </a>   
+        </div>
+</div>           
+</body>
+</html>

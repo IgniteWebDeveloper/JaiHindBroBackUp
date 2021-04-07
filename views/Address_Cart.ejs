@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/CartStyling/Address_CartStyle.css">
+    <script src="../javascripts/cities.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="back">
+        <% include ./WebNavBarPartials/WebNavBarPartials.ejs %>
+
+        <nav id="mobNav">
+            <div class="logo1">
+                <i  class="ri-arrow-left-line"></i>
+                <img src=".../images/otpimage/ideaa.png" alt="">
+            </div>
+            <div class="icons1">
+                    <i id="find1" class="ri-search-line"></i>
+                    <img id="book" src="../images/otpimage/Icon feather-bookmark.png" alt="">
+            </div>
+        </nav>
+        <div  id="mainPage">
+                <div id="process_trail">
+                    <a href="/bag">
+                        <div class="step1">
+                            <h4>BAG</h4>
+                        </div>
+                    </a>
+                    <hr class="dashed_line">
+                    <div class="step2">
+                        <h4>ADDRESS</h4>
+                        <div class="line"></div>
+                    </div>
+                    <hr class="dashed_line">
+                    <div class="step1">
+                        <h4>PAYMENT </h4>
+                    </div> 
+                </div>
+            <h2>Provide your complete details for better  experience</h2>
+            <div id="mainContentPages">
+                <div id="leftPage">
+                    <div class="AddressMain">
+                        <form id="orderDetsForm" action="/payment">
+                            <h5 class="inputHead">contact details</h5>
+                            <h6 class="inputTag">Full Name</h6>
+                            <input class="InputFields" type="text" placeholder="Enter Your Full Name*">
+                            <h6 class="inputTag">Mobile Number</h6>
+                            <input class="InputFields" type="text" placeholder="Enter Your Mobile Number*">
+                            <h5 class="inputHead">Address</h5>
+                            <h6 class="inputTag">Pin Code</h6>
+                            <input class="InputFields" type="text" placeholder="Enter Your Pin Code*">
+                            <h6 class="inputTag">Delivery Address</h6>
+                            <input class="InputFields" type="text" placeholder="Address (House No, Building, Street, Area)**">
+                            <h6 class="inputTag">Locality</h6>
+                            <input class="InputFields" type="text" placeholder="Enter Your Locality*">
+                            <div id="stateCity">
+                                <select onchange="print_city('state', this.selectedIndex);" id="sts" name ="stt" class="form-control" required></select>
+                                <select id ="state" class="form-control" required></select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="rightPage">
+                    <h3>Price Details (2 Items)</h3>
+                    <div id="totalAmount">
+                        <h5>Total Amount to Pay</h5>
+                        <h5>₹ 1000</h5>
+                    </div>
+                        <div id="placeOrder">
+                            <h4>CONTINUE</h4>
+                        </div>
+                    <a id="ContactUsLink" href="/contact-us">Need Help ? Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div style="display: none;" class="horizontal_line"></div>
+        <div id="bottomNav">
+            <div class="priceDets">
+                <h3>₹ 1000</h3>
+                <a href="#rightPage">View Details</a>
+            </div>
+                <div class="PLaceORder" id="placeOrder">
+                    <h4>PLACE ORDER</h4>
+                    <img src="../images/CartImages/Group 5020.png" alt="">
+                </div>
+        </div>
+    </div>           
+    <script language="javascript">print_state("sts");</script>
+    <script>
+        var orderPlaceBtnWeb = document.querySelector('#placeOrder');
+        var orderDetsForm = document.querySelector('#orderDetsForm');
+        
+        orderPlaceBtnWeb.addEventListener('click', function(){
+            orderDetsForm.submit();
+        });
+    </script>
+    <script>
+        var orderPlaceBtnMob = document.querySelector('.PLaceORder');
+        var orderDetsForm = document.querySelector('#orderDetsForm');
+        
+        orderPlaceBtnMob.addEventListener('click', function(){
+            orderDetsForm.submit();
+        });
+    </script>
+</body>
+</html>

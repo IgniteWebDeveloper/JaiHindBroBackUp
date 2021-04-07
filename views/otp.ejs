@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/SignIn&SignUpStyling/otp.css">
+</head>
+<body>
+<div id="back">
+    <% include ./WebNavBarPartials/WebNavBarPartials.ejs%>
+    <% include ./MobNavBarPartials/MobNavBarLoginProcess.ejs%>
+    <div id="mainPage">
+        <div id="left">
+            <img src="../images/loginimages/Mask Group 182.png" alt="">
+        </div>
+        <div id="right">
+            <img src="../images/loginimages/Mask Group 46.svg" alt="">
+            <div class="welcome">
+                <h3>Welcome to</h3>
+                <img src="../images/loginimages/ideaa.png" alt="">
+            </div>
+            <div id="mainBack">
+                <h2>Verify Your Number with OTP</h2>
+                <h5>Sent to <%=`+91${phonenumber}`%></h5>
+                <form action="/verify" method="GET">
+                    <input type="tel" name="phonenumber" id="hidden" value="<%=phonenumber%>">
+                    <input type="number" name="code" max="4" placeholder="Enter OTP sent to your Number here" id="">
+                </form>
+                <div id="resendtimer">Resend OTP in:<span id="timer"></span></div>
+                <a id="resendbtn" href="/resend">RESEND OTP</a>
+                <a href="/log-in-with-password"><span style="color: #636C74;">Sign In using</span> Password</a>
+                <button>CONTINUE</button>
+                <!-- <img src="../images/loginimages/2481155.png" alt=""> -->
+            </div>
+            <img id="bottomGreen" src="../images/loginimages/Mask Group 47.svg" alt="">
+        </div>
+    </div>
+</div>    
+    
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+    var OTPsendBTN = document.querySelector('#mainBack button');
+    var NumberForm = document.querySelector('#mainBack form');
+    var resendbtn =document.querySelector("#resendbtn");
+    var resendtimer =document.querySelector("#resendtimer");
+        
+    OTPsendBTN.addEventListener('click', function(){
+    NumberForm.submit();
+    });
+    var count=30;
+
+    var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+    function timer()
+    {
+        count=count-1;
+        if (count <= 0)
+        {
+            clearInterval(counter);
+            resendbtn.style.display="initial";
+            resendtimer.style.display="none";
+            return;
+        }
+
+        document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
+    }
+</script>
+    
+</body>
+</html>
+
+ 
