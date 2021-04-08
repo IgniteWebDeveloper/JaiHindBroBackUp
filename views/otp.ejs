@@ -11,7 +11,7 @@
 <body>
 <div id="back">
     <% include ./WebNavBarPartials/WebNavBarPartials.ejs%>
-    <% include ./MobNavBarLoginProcess/MobNavBarLoginProcess.ejs%>
+    <% include ./MobNavBarPartials/MobNavBarLoginProcess.ejs%>
     <div id="mainPage">
         <div id="left">
             <img src="../images/loginimages/Mask Group 182.png" alt="">
@@ -24,11 +24,13 @@
             </div>
             <div id="mainBack">
                 <h2>Verify Your Number with OTP</h2>
-                <h5>Sent to +91 95222 35356</h5>
-                <form action="/sign-in">
-                    <input type="number" max="4" placeholder="Enter OTP sent to your Number here" id="">
+                <h5>Sent to <%=`+91${phonenumber}`%></h5>
+                <form action="/verify" method="POST">
+                    <input type="tel" name="phonenumber" id="hidden" value="<%=phonenumber%>">
+                    <input type="number" name="code" max="4" placeholder="Enter OTP sent to your Number here" id="">
                 </form>
-                <a href="/ResendOtp">RESEND OTP</a>
+                <div id="resendtimer">Resend OTP in:<span id="timer"></span></div>
+                <a id="resendbtn" href="/resend">RESEND OTP</a>
                 <a href="/log-in-with-password"><span style="color: #636C74;">Sign In using</span> Password</a>
                 <button>CONTINUE</button>
                 <!-- <img src="../images/loginimages/2481155.png" alt=""> -->
@@ -43,10 +45,28 @@
 <script>
     var OTPsendBTN = document.querySelector('#mainBack button');
     var NumberForm = document.querySelector('#mainBack form');
+    var resendbtn =document.querySelector("#resendbtn");
+    var resendtimer =document.querySelector("#resendtimer");
         
     OTPsendBTN.addEventListener('click', function(){
     NumberForm.submit();
     });
+    var count=30;
+
+    var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+    function timer()
+    {
+        count=count-1;
+        if (count <= 0)
+        {
+            clearInterval(counter);
+            resendbtn.style.display="initial";
+            resendtimer.style.display="none";
+            return;
+        }
+
+        document.getElementById("timer").innerHTML=count + " secs"; // watch for spelling
+    }
 </script>
     
 </body>

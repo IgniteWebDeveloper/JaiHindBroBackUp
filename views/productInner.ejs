@@ -40,7 +40,7 @@
                 </div>
                 <div id="rightDets">
                     <h1>Printed with 2 Faces</h1>
-                    <h2>Rs. 600</h2>
+                    <h2><%=val.Price%></h2>
                     <h6>inclusive of all taxes</h6>
                     <div id="size">
                         <h3>SELECT SIZE</h3>
@@ -54,7 +54,10 @@
                         </div>
                     </div>
                     <div id="buttons">
-                        <button id="addToBag"><img src="../images/productsimages/Icon feather-shopping-bag productPage.png" alt="">ADD TO BAG</button>
+                        <form action="/addcart" method="POST">
+                        <input type="hidden" name="id" value="<%=val._id%>" >
+                        <button  type="submit" id="addToBag"><img src="../images/productsimages/Icon feather-shopping-bag productPage.png" alt="">ADD TO BAG</button>
+                        </form>
                         <button id="wishlist"><img src="../images/otpimage/Icon feather-bookmark Mob.png" alt="">WISHLIST</button>
                     </div>
                     <div id="detailing">

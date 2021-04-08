@@ -309,8 +309,8 @@ nav .links{
 /* #buttons button{
     color: whitee;
 } */
-#addToBag{
-    width: 45%;
+ form #addToBag{
+    width: 100%;
     height: 50px;
     display: flex;
     align-items: center;

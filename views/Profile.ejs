@@ -11,19 +11,7 @@
 <body>
 <div id="back">    
     <% include ./WebNavBarPartials/WebNavBarPartials.ejs %>
- 
- 
-    <nav id="mobNav">
-            <div class="logo1">
-                <i  class="ri-arrow-left-line"></i>
-                <img src=".../images/otpimage/ideaa.png" alt="">
-            </div>
-            <div class="icons1">
-                    <i id="find1" class="ri-search-line"></i>
-                    <img id="book" src="../images/otpimage/Icon feather-bookmark Mob.png" alt="">
-                    <img id="book" src="../images/otpimage/Icon feather-shopping-bag Mob.png" alt="">
-            </div>
-    </nav>
+    <% include ./MobNavBarPartials/MobNavbarWIthBackBtn.ejs %>
     <div id="mainPage">
         <h2>Account</h2>
         <h5>Lorem Ipsum</h5>
@@ -102,36 +90,36 @@
                     <h3>Profile Details</h3>
                     <div id="rightInner2">
                         <div class="profileDets">
-                            <h4>Full Name</h4>
-                            <h5>Lorem Ipsum</h5>
+                            <h4>fullname</h4>
+                            <h5><%=user.fullname%></h5>
                         </div>
                         <div class="profileDets">
                             <h4>Mobile Number</h4>
-                            <h5>99695 45621</h5>
+                            <h5><%=user.username%></h5>
                         </div>
                         <div class="profileDets">
                             <h4>Email ID</h4>
-                            <h5>forexample@gmail.com</h5>
+                            <h5><%=user.email%></h5>
                         </div>
                         <div class="profileDets">
                             <h4>Gender</h4>
-                            <h5 style="text-transform: uppercase;">male</h5>
+                            <h5 style="text-transform: uppercase;"><%=user.gender%></h5>
                         </div>
                         <div class="profileDets">
                             <h4>Pin Code</h4>
-                            <h5>462001</h5>
+                            <h5><%=user.pincode%></h5>
                         </div>
                         <div class="profileDets">
                             <h4>Address</h4>
-                            <h5>84/d, Lorem ipsum dolor sit amet,<br> consetetur sadipscing elitr,<br> sed diam</h5>
+                            <h5><%=user.address%></h5>
                         </div>
                         <div class="profileDets">
                             <h4>City</h4>
-                            <h5>Bhopal</h5>
+                            <h5><%=user.city%></h5>
                         </div>
                         <div class="profileDets">
                             <h4>State</h4>
-                            <h5>Madhya Pradesh</h5>
+                            <h5><%=user.state%></h5>
                         </div>
                         <a href="/edit-profile">EDIT</a>
                     </div>

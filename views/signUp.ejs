@@ -11,43 +11,8 @@
 <body>
  
     <div id="back">
-        <nav id="webNav">
-        <div class="can">
-            <i id="menu" class="ri-menu-2-fill"></i>
-            <a href="/homepage"><img src="../images/homePage/ideaa.png" alt=""></a>
-           </div>
-                <div class="links">
-                    <!-- <a href="#">men</a><a href="#">women</a><a href="#">accessories</a><a href="#">revolutionary</a> -->
-                </div>   
-                <div class="search-box">   
-                    <input class="search-text" input="text" name="" placeholder="Search for products,brands and more ">
-                      <div class="search-btn">
-                         <i class="ri-search-line"></i>
-                      </div>        
-                   </div>
-                <div class="icons">
-                    <i id="find" class="ri-search-line"></i> 
-                       <div class="icon-head">
-                        <a style="display: flex; align-items: center; flex-direction: column; text-decoration: none;" href="/user-profile">
-                            <img id="profile" src="../images/homePage/Group 1.png" alt="">
-                            <h5 id="pro">profile</h5>
-                        </a>
-                       </div>
-                       <div class="icon-head">
-                        <a style="display: flex; align-items: center; flex-direction: column; text-decoration: none;" href="/wishlist">
-                            <img id="bookmark" src="../images/homePage/Icon feather-bookmark.svg" alt="">
-                            <h5>wishlist</h5>
-                        </a>
-                       </div>
-                       <div class="icon-head">
-                        <a style="display: flex; align-items: center; flex-direction: column; text-decoration: none;" href="/cart">
-                            <img id="bag" src="../images/homePage/Icon feather-shopping-bag.svg" alt="">
-                            <h5>bag</h5>
-                        </a>
-                        </div>
-                </div>
-        </nav>
-        <% include ./MobNavBarLoginProcess/MobNavBarLoginProcess.ejs%>
+        <% include ./WebNavBarPartials/WebNavBarPartials.ejs%>
+        <% include ./MobNavBarPartials/MobNavBarLoginProcess.ejs%>
      <div class="big">
          <div class="imagecontainer">
              <img src="../images/loginimages/Mask Group 182.png" alt="">
@@ -58,24 +23,29 @@
             <img id="rc1" src="../images/loginimages/Mask Group 47.svg " alt="">
               <div class="palletoverlay">
             <div class="box">
-                <a href="/log-in-with-password"><button id="btn1">Sign In</button></a>
+                <a href="/sign-in"><button id="btn1">Sign In</button></a>
                 <div class="line">
                   <img src="../images/loginimages/Line 648.png" alt="">
                 </div>
                 <a href="/"><button id="btn2" >Sign Up</button></a>
             </div> 
             <div class="sign">
+                <a href="/auth/facebook">
                 <button class="facebook"><img id="facebook" src="../images/loginimages/Icon awesome-facebook-square.svg" alt=""><h5>facebook</h5></button>
+                </a>
+                <a href="/google">
                 <button class="google"><img id="google" src="https://img.icons8.com/color/48/000000/google-logo.png" alt=""><h5>google</h5></button>
+                </a>
              </div>
              <div class="or">
             </div>
             <div class="switch">
                 <div class="signUp">
-                   <form id="signUpForm" action="/homepage">
-                      <input class="ipt" type="text"  placeholder="Full Name">
-                      <input class="ipt" type="text" placeholder="Email">
-                      <input class="ipt" type="password" placeholder="Create Password">
+                   <form id="signUpForm" action="/reg" method="POST">
+                      <input id="hidden" type="tel" name="username" value="<%=phonenumber%>">
+                      <input class="ipt"name="fullname" type="text"  placeholder="Full Name">
+                      <input class="ipt" name="email" type="text" placeholder="Email">
+                      <input class="ipt" name="password" type="password" placeholder="Create Password">
                       <div class="gender">
                           <h5>Select Gender :-</h5>
                           <input id="radio1" type="radio" id="male" name="gender" value="male">

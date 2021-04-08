@@ -19,6 +19,6 @@ function bdaImg(profilepallet){
 
 function normalImg(profilepallet){
    profilepallet.style.height = "0px";
-  line.style.width = '0%';
   hidden.style.display = 'none';
+  line.style.width = '0%';
 }
