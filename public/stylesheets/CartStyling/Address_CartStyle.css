@@ -17,6 +17,7 @@ html,body{
     width: 100%;
     height: calc(100% - 60px);
     /* background-color: red; */
+    padding-left: 150px !important;
     /* position: relat  ive; */
 }
 #process_trail{
@@ -26,7 +27,7 @@ html,body{
     position: relative;
     left: 50%;
     transform: translate(-50%, 0%);
-    width: 40%;
+    width: 30%;
     height: 30px;
     /* background-color: yellow; */
     margin-top: 40px;
@@ -68,7 +69,6 @@ html,body{
 #mainPage>h2{
     font-family: 'Whitney semibold';
     margin-top: 50px;
-    padding-left: 150px;
 }
 #back .horizontal_line{
     width: 100%;
@@ -81,9 +81,7 @@ html,body{
     width: 100%;
     min-height: 100%;
     /* background-color: #5ACEAA   ; */
-    border-top: 1px solid #d4d5d9;
     display: flex;
-    padding-left: 150px !important;
     margin-top: 23px;
 }
 #leftPage{
@@ -296,7 +294,6 @@ html,body{
         width: 30px;
     }
     #mainPage>h2{
-        padding-left: 0px;
         margin-top: 20px;
         font-size: 16px;
     }
@@ -307,7 +304,6 @@ html,body{
         border-right: none;
     }
     #mainContentPages{
-        padding-left: 0px !important; 
         flex-direction: column;
     }
     .AddressMain{
@@ -454,7 +450,6 @@ html,body{
         width: 30px;
     }
     #mainPage>h2{
-        padding-left: 0px;
         margin-top: 20px;
         font-size: 16px;
     }
@@ -465,7 +460,6 @@ html,body{
         border-right: none;
     }
     #mainContentPages{
-        padding-left: 0px !important; 
         flex-direction: column;
     }
     .AddressMain{
@@ -612,7 +606,6 @@ html,body{
         width: 30px;
     }
     #mainPage>h2{
-        padding-left: 0px;
         margin-top: 20px;
         font-size: 16px;
     }
@@ -623,7 +616,6 @@ html,body{
         border-right: none;
     }
     #mainContentPages{
-        padding-left: 0px !important; 
         flex-direction: column;
     }
     .AddressMain{
@@ -770,7 +762,6 @@ html,body{
         width: 30px;
     }
     #mainPage>h2{
-        padding-left: 0px;
         margin-top: 20px;
         font-size: 16px;
     }
@@ -781,7 +772,6 @@ html,body{
         border-right: none;
     }
     #mainContentPages{
-        padding-left: 0px !important; 
         flex-direction: column;
     }
     .AddressMain{

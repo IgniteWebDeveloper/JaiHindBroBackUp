@@ -11,7 +11,17 @@
 <body>
     <div id="back">    
         <% include ./WebNavBarPartials/WebNavBarPartials.ejs %>
-        <% include ./MobNavBarPartials/MobNavbarWIthBackBtn.ejs %>
+ 
+        <nav id="mobNav">
+                <div class="logo1">
+                    <i  class="ri-arrow-left-line"></i>
+                    <img src=".../images/otpimage/ideaa.png" alt="">
+                </div>
+                <div class="icons1">
+                        <i id="find1" class="ri-search-line"></i>
+                        <img id="book" src="../images/otpimage/Icon feather-bookmark.png" alt="">
+                </div>
+        </nav>
         <div id="Content">
             <div id="Head">
                 <div onclick="goBack()" id="goBack">

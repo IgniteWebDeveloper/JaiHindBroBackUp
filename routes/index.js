@@ -4,13 +4,12 @@ const passport =require('passport');
 const userModel =require('./users');
 const localStragedy =require('passport-local');
 const productModel =require('./product');
-const nodemailer = require('nodemailer');
-const crypto =require("crypto");
-const async =require("async");
+// const googleStrategy = require('passport-google-oauth20').Strategy;
+// const user = require('./users');
 require('./oauth2');
 require('dotenv').config();
 const client = require('twilio')(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN)
-// const Cart =require('./cart');
+const Cart =require('./cart');
 
 passport.use(new localStragedy(userModel.authenticate()));
 
@@ -30,7 +29,7 @@ router.get('/phonelogin',function(req,res){
         channel: 'sms'
     })
     .then(data => {
-        res.render('otp',{phonenumber:req.query.phonenumber})
+        res.redirect('/otp-verify')
     }) 
  } else {
     res.status(400).send({
@@ -41,19 +40,20 @@ router.get('/phonelogin',function(req,res){
 })
 
 router.get('/verify',function(req,res){
-  // console.log(req.query.phonenumber);
   if (req.query.phonenumber && (req.query.code).length === 4) {
     client
         .verify
         .services(process.env.SERVICE_ID)
         .verificationChecks
         .create({
-            to: `+91${req.query.phonenumber}`,
+            to: `+${req.query.phonenumber}`,
             code: req.query.code
         })
         .then(data => {
+          console.log(data)
               if (data.status === "approved") {
-              res.render('signup',{phonenumber:req.query.phonenumber})
+              res.status(200).redirect('/');
+                
             }
         })
 } else {
@@ -65,6 +65,7 @@ router.get('/verify',function(req,res){
 })
 
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {mssg:"wellcome"});
@@ -74,14 +75,9 @@ router.get('/phone-number-page',function(req,res){
   res.render('phonenumberpage');
 })
 
-router.get('/homepage', function(req, res){
-  res.render('homePage');
-});
-
-router.get('/sign-up', function(req, res){
-  res.render('signUp');
-});
-
+router.get('/otp-verify',function(req,res){
+  res.render('otp');
+})
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }))
 
 router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/failed' }),
@@ -109,15 +105,12 @@ router.post('/reg' , function(req ,res){
     username: req.body.username,
     fullname: req.body.fullname,
     email:req.body.email,
-    gender:req.body.gender,
-    address:req.body.address,
-    pincode:req.body.pincode,
-    city:req.body.city
+    gender:req.body.gender
   })
   userModel.register(newUser , req.body.password)
   .then(function(u){
   passport.authenticate('local')(req, res , function(){
-    res.status(200).json({message: 'user registered', value:u})
+    res.status(200).json({message: 'user registered' , value:u})
   })
 })
 })
@@ -127,125 +120,8 @@ router.post('/login' , passport.authenticate('local' , {
   failureRedirect:'/'
 }), function(req , res , next){})
 
-// ----------------------------forgetpassword------------------------------
-
-router.post('/forgot', function(req, res, next) {
-  async.waterfall([
-    function(done) {
-      crypto.randomBytes(20, function(err, buf) {
-        var token = buf.toString('hex');
-        done(err, token);
-      });
-    },
-    function(token, done) {
-      // console.log(userModel.findOne({ email: req.body.email }));
-      userModel.findOne({ email: req.body.email }, function(err, user) {
-        console.log(user);
-        if (!user) {
-          // req.flash('error', 'No account with that email address exists.');
-        
-          return res.json({val:"no account with that email"});
-        }
-
-        user.resetPasswordToken = token;
-        user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
-
-        user.save(function(err) {
-          done(err, token, user);
-        });
-      });
-    },
-    function(token, user, done) {
-      var smtpTransport = nodemailer.createTransport( {
-        service: 'gmail',
-        auth: {
-          user: 'tikarer123@gmail.com',
-          pass: '8357087132'
-        }
-      });
-      var mailOptions = {
-        from: 'ritesh tikare',
-        to: user.email,
-        subject: 'Node.js Password Reset',
-        text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
-          'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
-          'If you did not request this, please ignore this email and your password will remain unchanged.\n'
-      };
-      smtpTransport.sendMail(mailOptions, function(err) {
-        // req.flash('info', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
-        done(err, 'done');
-      });
-    }
-  ], function(err) {
-    if (err) return next(err);
-    res.json({val:"mssage is send"});
-  });
-});
-
-router.get('/reset/:token', function(req, res) {
-  userModel.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
-    if (!user) {
-      // req.flash('error', 'Password reset token is invalid or has expired.');
-      return res.redirect('/forgot');
-    }
-    // res.render('reset', {
-    //   user: req.user
-    // });
-    res.json({val:"reset password"})
-  });
-});
-
-router.post('/reset/:token', function(req, res) {
-  async.waterfall([
-    function(done) {
-      userModel.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
-        if (!user) {
-          // req.flash('error', 'Password reset token is invalid or has expired.');
-          return res.redirect('back');
-        }
-
-        user.password = req.body.password;
-        user.resetPasswordToken = undefined;
-        user.resetPasswordExpires = undefined;
-
-        user.save(function(err) {
-          req.logIn(user, function(err) {
-            done(err, user);
-          });
-        });
-      });
-    },
-    function(user, done) {
-      var smtpTransport = nodemailer.createTransport('SMTP', {
-        service: 'gmail',
-        auth: {
-          user: 'tikarer123@gmail.com',
-          pass: '8357087132'
-        }
-      });
-      var mailOptions = {
-        to: user.email,
-        from: 'passwordreset@demo.com',
-        subject: 'Your password has been changed',
-        text: 'Hello,\n\n' +
-          'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n'
-      };
-      smtpTransport.sendMail(mailOptions, function(err) {
-        // req.flash('success', 'Success! Your password has been changed.');
-        done(err);
-      });
-    }
-  ], function(err) {
-    res.redirect('/');
-  });
-});
-
 router.get('/profile',function(req,res){
-  userModel.findOne({username:req.user})
-  .then(function(ritesh){
-    res.status(200).json({val:ritesh})
-  })
+  res.status(200).json({mssg:'loggedIn'})
 })
 
 router.get('/logout', (req, res) => {
@@ -264,13 +140,9 @@ router.get('/loginpage',function(req,res){
 router.post('/addproduct',function(req,res){
   console.log(req.body)
   const prod = new productModel({
-    Price: req.body.productPrice,
-    color: req.body.productcolor,
-    category: req.body.category,
-    title:req.body.title,
-    Image:req.body.Image,
-    size:req.body.size,
-    des:req.body.des
+    productPrice: req.body.productPrice,
+    productcolor: req.body.productcolor,
+    category: req.body.category
 });
 prod.save()
     .then(result => {
@@ -286,23 +158,6 @@ router.get('/product',function(req,res){
    res.status(200).json({value:foundproduct})
  }).catch(err => console.log(err));
 })
-
-// router.get('/product/:page',function(req,res){
-//   var perPage = 1;
-//   var page = Math.max(0, req.params.page);
-//   productModel.find()
-//     .limit(perPage)
-//     .skip(perPage * page)
-//     .exec(function(err,cars) {
-//         carModel.count().exec(function(err, count) {
-//             res.render('product', {
-//               products:product,
-//                 page: page,
-//                 pages: count / perPage
-//             })
-//         })
-//     })
-// })
 
 router.get('/productdetails/:prodId',function(req,res){
   productModel.findById(req.params.prodId)
@@ -350,30 +205,152 @@ router.post('/deleteProduct',function(req,res){
 
 
 // GET: add a product to the shopping cart when "Add to cart" button is pressed
-router.get('/addcart',function(req,res){
-  req.user.addToCart(req.body.id)
-  .then(() => {
-    res.redirect('/cart');
-}).catch(err => console.log(err));
+router.get("/add-to-cart/:id", async (req, res) => {
+  const productId = req.params.id;
+  try {
+    // get the correct cart, either from the db, session, or an empty cart.
+    let user_cart;
+    if (req.user) {
+      user_cart = await Cart.findOne({ user: req.user._id });
+    }
+    let cart;
+    if (
+      (req.user && !user_cart && req.session.cart) ||
+      (!req.user && req.session.cart)
+    ) {
+      cart = await new Cart(req.session.cart);
+    } else if (!req.user || !user_cart) {
+      cart = new Cart({});
+    } else {
+      cart = user_cart;
+    }
+
+    // add the product to the cart
+    const product = await Product.findById(productId);
+    const itemIndex = cart.items.findIndex((p) => p.productId == productId);
+    if (itemIndex > -1) {
+      // if product exists in the cart, update the quantity
+      cart.items[itemIndex].qty++;
+      cart.items[itemIndex].price = cart.items[itemIndex].qty * product.price;
+      cart.totalQty++;
+      cart.totalCost += product.price;
+    } else {
+      // if product does not exists in cart, find it in the db to retrieve its price and add new item
+      cart.items.push({
+        productId: productId,
+        qty: 1,
+        price: product.price,
+        title: product.title,
+        productCode: product.productCode,
+      });
+      cart.totalQty++;
+      cart.totalCost += product.price;
+    }
+
+    // if the user is logged in, store the user's id and save cart to the db
+    if (req.user) {
+      cart.user = req.user._id;
+      await cart.save();
+    }
+    req.session.cart = cart;
+    req.flash("success", "Item added to the shopping cart");
+    res.redirect(req.headers.referer);
+  } catch (err) {
+    console.log(err.message);
+    res.redirect("/product");
+  }
 })
 
-router.get('/cart',function(req,res){
-  req.user
-        .populate('cart.items.productId')
-        .execPopulate()
-        .then(user => {
-            console.log(user);
-            res.status(200).json( { cart: user.cart, pageTitle: 'Shopping Cart Detail' });
-        })
-        .catch(err => console.log(err));
-})
 
-router.post('/delete-cart',function(req,res){
-  req.user.removeFromCart(req.body.prodId)
-  .then(() => {
-      res.redirect('/cart');
-  }).catch(err => console.log(err));
-})
+// -----------------------------------------Sign Up--------------------------------------------
+
+router.get('/sign-up', function(req, res){
+  res.render('signUp');
+});
+
+// -----------------------------------------Sign In--------------------------------------------
+
+router.get('/sign-in', function(req, res){
+  res.render('signIn');
+});
+
+
+// -----------------------------------------Log In With Password--------------------------------------------
+
+router.get('/log-in-with-password', function(req, res){
+  res.render('logInWithPassword');
+});
+
+
+// -----------------------------------------cart--------------------------------------------
+router.get('/cart', function(req, res){
+  res.render('Cart');
+});
+
+router.get('/add-address', function(req, res){
+  res.render('Address_Cart');
+});
+
+
+// -----------------------------------------User - Profile--------------------------------------------
+
+router.get('/user-profile', function(req, res){
+  res.render('Profile');
+});
+
+// -----------------------------------------edit - Profile--------------------------------------------
+
+router.get('/edit-profile', function(req, res){
+  res.render('edit_Profile');
+});
+
+// -----------------------------------------Orders - done--------------------------------------------
+
+router.get('/Orders', function(req, res){
+  res.render('Orders');
+});
+
+// -----------------------------------------Contact Us--------------------------------------------
+
+router.get('/contact-us', function(req, res){
+  res.render('ContactUs');
+});
+
+// -----------------------------------------Terms Of Use--------------------------------------------
+
+router.get('/terms-of-use', function(req, res){
+  res.render('termsOfUse');
+});
+
+// -----------------------------------------Privacy Policy--------------------------------------------
+
+router.get('/privacy-policy', function(req, res){
+  res.render('privacyPolicy');
+});
+
+// -----------------------------------------HomePage--------------------------------------------
+
+router.get('/homepage', function(req, res){
+  res.render('homePage');
+});
+
+// -----------------------------------------Products--------------------------------------------
+
+router.get('/products', function(req, res){
+  res.render('products');
+});
+
+// -----------------------------------------Products Inner Page--------------------------------------------
+
+router.get('/productInner', function(req, res){
+  res.render('productInner');
+});
+
+// -----------------------------------------wishlist Page--------------------------------------------
+
+router.get('/wishlist', function(req, res){
+  res.render('wishlist');
+});
 
 function isLoggedIn(req,res,next){
   if(req.isAuthenticated()) return next();
@@ -382,97 +359,4 @@ function isLoggedIn(req,res,next){
   }
 }
 
-
-
-
-
-// // -----------------------------------------Sign Up--------------------------------------------
-
-// router.get('/sign-up', function(req, res){
-//   res.render('signUp');
-// });
-
-// // -----------------------------------------Sign In--------------------------------------------
-
-// router.get('/sign-in', function(req, res){
-//   res.render('signIn');
-// });
-
-
-// // -----------------------------------------Log In With Password--------------------------------------------
-
-// router.get('/log-in-with-password', function(req, res){
-//   res.render('logInWithPassword');
-// });
-
-
-// // -----------------------------------------cart--------------------------------------------
-// router.get('/bag', function(req, res){
-//   res.render('Cart');
-// });
-
-// router.get('/add-address', function(req, res){
-//   res.render('Address_Cart');
-// });
-
-
-// // -----------------------------------------User - Profile--------------------------------------------
-
-// router.get('/user-profile', function(req, res){
-//   res.render('Profile');
-// });
-
-// // -----------------------------------------edit - Profile--------------------------------------------
-
-// router.get('/edit-profile', function(req, res){
-//   res.render('edit_Profile');
-// });
-
-// // -----------------------------------------Orders - done--------------------------------------------
-
-// router.get('/Orders', function(req, res){
-//   res.render('Orders');
-// });
-
-// // -----------------------------------------Contact Us--------------------------------------------
-
-// router.get('/contact-us', function(req, res){
-//   res.render('ContactUs');
-// });
-
-// // -----------------------------------------Terms Of Use--------------------------------------------
-
-// router.get('/terms-of-use', function(req, res){
-//   res.render('termsOfUse');
-// });
-
-// // -----------------------------------------Privacy Policy--------------------------------------------
-
-// router.get('/privacy-policy', function(req, res){
-//   res.render('privacyPolicy');
-// });
-
-// // -----------------------------------------HomePage--------------------------------------------
-
-// router.get('/homepage', function(req, res){
-//   res.render('homePage');
-// });
-
-// // -----------------------------------------Products--------------------------------------------
-
-// router.get('/products', function(req, res){
-//   res.render('products');
-// });
-
-// // -----------------------------------------Products Inner Page--------------------------------------------
-
-// router.get('/productInner', function(req, res){
-//   res.render('productInner');
-// });
-
-// // -----------------------------------------wishlist Page--------------------------------------------
-
-// router.get('/wishlist', function(req, res){
-//   res.render('wishlist');
-// });
 module.exports = router;

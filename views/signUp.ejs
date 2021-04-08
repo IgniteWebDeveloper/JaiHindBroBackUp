@@ -11,8 +11,43 @@
 <body>
  
     <div id="back">
-        <% include ./WebNavBarPartials/WebNavBarPartials.ejs%>
-        <% include ./MobNavBarPartials/MobNavBarLoginProcess.ejs%>
+        <nav id="webNav">
+        <div class="can">
+            <i id="menu" class="ri-menu-2-fill"></i>
+            <a href="/homepage"><img src="../images/homePage/ideaa.png" alt=""></a>
+           </div>
+                <div class="links">
+                    <!-- <a href="#">men</a><a href="#">women</a><a href="#">accessories</a><a href="#">revolutionary</a> -->
+                </div>   
+                <div class="search-box">   
+                    <input class="search-text" input="text" name="" placeholder="Search for products,brands and more ">
+                      <div class="search-btn">
+                         <i class="ri-search-line"></i>
+                      </div>        
+                   </div>
+                <div class="icons">
+                    <i id="find" class="ri-search-line"></i> 
+                       <div class="icon-head">
+                        <a style="display: flex; align-items: center; flex-direction: column; text-decoration: none;" href="/user-profile">
+                            <img id="profile" src="../images/homePage/Group 1.png" alt="">
+                            <h5 id="pro">profile</h5>
+                        </a>
+                       </div>
+                       <div class="icon-head">
+                        <a style="display: flex; align-items: center; flex-direction: column; text-decoration: none;" href="/wishlist">
+                            <img id="bookmark" src="../images/homePage/Icon feather-bookmark.svg" alt="">
+                            <h5>wishlist</h5>
+                        </a>
+                       </div>
+                       <div class="icon-head">
+                        <a style="display: flex; align-items: center; flex-direction: column; text-decoration: none;" href="/cart">
+                            <img id="bag" src="../images/homePage/Icon feather-shopping-bag.svg" alt="">
+                            <h5>bag</h5>
+                        </a>
+                        </div>
+                </div>
+        </nav>
+        <% include ./MobNavBarLoginProcess/MobNavBarLoginProcess.ejs%>
      <div class="big">
          <div class="imagecontainer">
              <img src="../images/loginimages/Mask Group 182.png" alt="">
@@ -23,7 +58,7 @@
             <img id="rc1" src="../images/loginimages/Mask Group 47.svg " alt="">
               <div class="palletoverlay">
             <div class="box">
-                <a href="/sign-in"><button id="btn1">Sign In</button></a>
+                <a href="/log-in-with-password"><button id="btn1">Sign In</button></a>
                 <div class="line">
                   <img src="../images/loginimages/Line 648.png" alt="">
                 </div>
