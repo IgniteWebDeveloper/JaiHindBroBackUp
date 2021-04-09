@@ -399,104 +399,104 @@ function isLoggedIn(req,res,next){
 
 
 
-// // -----------------------------------------Forgotten Password--------------------------------------------
+// -----------------------------------------Forgotten Password--------------------------------------------
 
-// router.get('/forgot-password', function(req , res){
-//   res.render('Forgot.ejs');
-// });
+router.get('/forgot-password', function(req , res){
+  res.render('Forgot.ejs');
+});
 
-// // -----------------------------------------Forgot Password 2--------------------------------------------
+// -----------------------------------------Forgot Password 2--------------------------------------------
 
-// router.get('/create-new-password', function(req , res){
-//   res.render('ForgotPassword2.ejs');
-// });
+router.get('/create-new-password', function(req , res){
+  res.render('ForgotPassword2.ejs');
+});
 
-// // // -----------------------------------------Sign Up--------------------------------------------
+// // -----------------------------------------Sign Up--------------------------------------------
 
-// router.get('/sign-up', function(req, res){
-//   res.render('signUp');
-// });
+router.get('/sign-up', function(req, res){
+  res.render('signUp');
+});
 
-// // // -----------------------------------------Sign In--------------------------------------------
+// // -----------------------------------------Sign In--------------------------------------------
 
-// router.get('/sign-in', function(req, res){
-//   res.render('signIn');
-// });
-
-
-// // // -----------------------------------------Log In With Password--------------------------------------------
+router.get('/sign-in', function(req, res){
+  res.render('signIn');
+});
 
 
-
-// // // -----------------------------------------cart--------------------------------------------
-// router.get('/bag', function(req, res){
-//   res.render('Cart');
-// });
-
-// router.get('/add-address', function(req, res){
-//   res.render('Address_Cart');
-// });
+// // -----------------------------------------Log In With Password--------------------------------------------
 
 
-// // // -----------------------------------------User - Profile--------------------------------------------
 
-// router.get('/user-profile', function(req, res){
-//   res.render('Profile');
-// });
+// // -----------------------------------------cart--------------------------------------------
+router.get('/bag', function(req, res){
+  res.render('Cart');
+});
 
-// // // -----------------------------------------edit - Profile--------------------------------------------
+router.get('/add-address', function(req, res){
+  res.render('Address_Cart');
+});
 
-// router.get('/edit-profile', function(req, res){
-//   res.render('edit_Profile');
-// });
 
-// // // -----------------------------------------Orders - done--------------------------------------------
+// // -----------------------------------------User - Profile--------------------------------------------
 
-// router.get('/Orders', function(req, res){
-//   res.render('Orders');
-// });
+router.get('/user-profile', function(req, res){
+  res.render('Profile');
+});
 
-// // // -----------------------------------------Contact Us--------------------------------------------
+// // -----------------------------------------edit - Profile--------------------------------------------
 
-// router.get('/contact-us', function(req, res){
-//   res.render('ContactUs');
-// });
+router.get('/edit-profile', function(req, res){
+  res.render('edit_Profile');
+});
 
-// // // -----------------------------------------Terms Of Use--------------------------------------------
+// // -----------------------------------------Orders - done--------------------------------------------
 
-// router.get('/terms-of-use', function(req, res){
-//   res.render('termsOfUse');
-// });
+router.get('/Orders', function(req, res){
+  res.render('Orders');
+});
 
-// // // -----------------------------------------Privacy Policy--------------------------------------------
+// // -----------------------------------------Contact Us--------------------------------------------
 
-// router.get('/privacy-policy', function(req, res){
-//   res.render('privacyPolicy');
-// });
+router.get('/contact-us', function(req, res){
+  res.render('ContactUs');
+});
 
-// // // -----------------------------------------HomePage--------------------------------------------
+// // -----------------------------------------Terms Of Use--------------------------------------------
 
-// router.get('/homepage', function(req, res){
-//   res.render('homePage');
-// });
+router.get('/terms-of-use', function(req, res){
+  res.render('termsOfUse');
+});
 
-// // // -----------------------------------------Products--------------------------------------------
+// // -----------------------------------------Privacy Policy--------------------------------------------
 
-// router.get('/products', function(req, res){
-//   res.render('products');
-// });
+router.get('/privacy-policy', function(req, res){
+  res.render('privacyPolicy');
+});
 
-// // // -----------------------------------------Products Inner Page--------------------------------------------
+// // -----------------------------------------HomePage--------------------------------------------
 
-// router.get('/productInner', function(req, res){
-//   res.render('productInner');
-// });
+router.get('/homepage', function(req, res){
+  res.render('homePage');
+});
 
-// // // -----------------------------------------wishlist Page--------------------------------------------
+// // -----------------------------------------Products--------------------------------------------
 
-// router.get('/wishlist', function(req, res){
-//   res.render('wishlist');
-// });
+router.get('/products', function(req, res){
+  res.render('products');
+});
+
+// // -----------------------------------------Products Inner Page--------------------------------------------
+
+router.get('/productInner', function(req, res){
+  res.render('productInner');
+});
+
+// // -----------------------------------------wishlist Page--------------------------------------------
+
+router.get('/wishlist', function(req, res){
+  res.render('wishlist');
+});
 
 
 module.exports = router;

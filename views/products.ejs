@@ -119,7 +119,7 @@
           </div>
         </div>
         <div id="bottomRight">
-          <div id="prdctvirtical">
+          <div class="prdctvertical">
             <% for(let p of val){ %>
               <div id="prdctLast" class="prdct">
                 <a href=<%= '/productdetails/'+p._id %>>
@@ -141,6 +141,8 @@
           </div>
         </div>
       </div>
+  <% include ./mobFooter/mobFooter.ejs %>
+    
     </div>
     <div id="mobFooter">
       <div id="sort_by">
@@ -213,7 +215,7 @@
                 <i class="ri-arrow-right-s-line"></i>
               </div>
             </a>
-          </div>  
+          </div>    
     <div id="actionBtn">
         <div id="close">
           <h5>CLOSE</h5>
@@ -222,6 +224,8 @@
           <h5>APPLY</h5>
         </div>
     </div>      
+  </div>
+
   </div>
   
   <script src="../javascripts/products.js"></script>
