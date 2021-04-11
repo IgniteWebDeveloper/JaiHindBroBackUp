@@ -42,40 +42,6 @@ html,body{
   border-top: 1px solid #d4d5d9;
   /* border-radius: 5px; */
 }
-#leftTabs{
-  width: 20%;
-  height: 100%;
-  /* background-color: red; */
-  border-right: 1px solid #d4d5d9;
-  padding-right: 50px;
-}
-.Tab{
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  width: 100%;
-  height: 80px;
-  /* background-color: red; */
-  border-bottom: 1px solid #d4d5d9;
-}
-#leftTabs .Tab:nth-child(2) h3{
-  font-family: 'whitney htf SemiBold';
-  font-size: 15px;
-  font-weight: 900;
-  color: #5ACEAA;
-  letter-spacing: 0.5px;
-}
-#leftTabs .Tab:nth-child(6){
-  border: none;
-}
-.Tab h3{
-  font-family: 'whitney htf';
-  font-size: 14px;
-  font-weight: 100;
-  color: black;
-  letter-spacing: 0.5px;
-}
-
 #mainContent{
   width: 80%;
   display: flex;

@@ -12,10 +12,12 @@ html,body{
 #back{
     height: 100%;
     min-width: 100%;
+    margin-top: 80px;
+    scroll-behavior: smooth;
 }
 #mainPage{
     width: 100%;
-    height: calc(100% - 60px);
+    height: 100%;
     /* background-color: red; */
     /* position: relat  ive; */
 }
@@ -25,11 +27,11 @@ html,body{
     justify-content: space-between;
     position: relative;
     left: 50%;
+    top: 3%;
     transform: translate(-50%, 0%);
     width: 40%;
     height: 30px;
     /* background-color: yellow; */
-    margin-top: 40px;
     font-family: 'Whitney light';
     font-size: 18px;
 }
@@ -244,6 +246,9 @@ html,body{
         height: 100%;
         scroll-behavior: smooth;
     }
+    #totalAmount{
+        width: 90%;
+    }
     #webNav{
      display: none;
     }
@@ -288,6 +293,7 @@ html,body{
         min-height: 100%;
     }
     #process_trail{
+        top: 0;
         width: 83%;
         margin-top: 70px;
         font-size: 15px;
@@ -402,6 +408,9 @@ html,body{
         height: 100%;
         scroll-behavior: smooth;
     }
+    #totalAmount{
+        width: 90%;
+    }
     #webNav{
      display: none;
     }
@@ -446,6 +455,7 @@ html,body{
         min-height: 100%;
     }
     #process_trail{
+        top: 0;
         width: 83%;
         margin-top: 70px;
         font-size: 15px;
@@ -560,6 +570,9 @@ html,body{
         height: 100%;
         scroll-behavior: smooth;
     }
+    #totalAmount{
+        width: 90%;
+    }
     #webNav{
      display: none;
     }
@@ -604,6 +617,7 @@ html,body{
         min-height: 100%;
     }
     #process_trail{
+        top: 0;
         width: 83%;
         margin-top: 70px;
         font-size: 15px;
@@ -718,6 +732,9 @@ html,body{
         height: 100%;
         scroll-behavior: smooth;
     }
+    #totalAmount{
+        width: 90%;
+    }
     #webNav{
      display: none;
     }
@@ -762,6 +779,7 @@ html,body{
         min-height: 100%;
     }
     #process_trail{
+        top: 0;
         width: 83%;
         margin-top: 70px;
         font-size: 15px;

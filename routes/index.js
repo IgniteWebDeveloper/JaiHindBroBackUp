@@ -499,6 +499,12 @@ router.get('/privacy-policy', function(req, res){
     res.render('wishlist');
   }); 
 
+  // // -----------------------------------------wishlist Page--------------------------------------------
+
+  router.get('/return-and-exchange', function(req, res){
+    res.render('returnAndExchange');
+  }); 
+
 // // -----------------------------------------Forgotten Password--------------------------------------------
 
 // router.get('/forgot-password', function(req , res){
