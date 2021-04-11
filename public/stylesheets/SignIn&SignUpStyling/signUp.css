@@ -27,172 +27,10 @@ body{
 #mobNav{
     display: none;
   }
-  #webNav{
-    width: 100%;
-    min-height: 80px;
-    position: sticky;
-    top: 0px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    outline: none;
-    z-index: 999;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-    box-shadow: 0 4px 5px  rgb(224, 223, 223);
-  }
-  
-  #menu{
-    display: none;
-  }
-  
-  .can{
-    display: flex;
-    align-items: center;
-  }
-  
-  nav img{
-        width: 145px;
-        /* margin-left: 10px; */
-        margin-bottom: 5px;
-  }
-  
-  nav .links{
-    min-height: inherit;
-    width: 450px;
-    margin-right: 500px;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .links a{
-    text-decoration: none;
-    color: black;
-    font-family: 'whitney semibold';
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    font-size: 15px;
-  }
-  
-  .icon-head #bookmark{
-    width: 16px !important;
-    margin-top: 2px;
-    color: #707070;
-    margin-right: 6px;
-  }
-  
-  #bag{
-    color: #707070;
-    width: 16px;
-  }
-  
-  
-  
-  .icons{
-    display: flex;
-    min-height: 60px !important;
-    width: 140px;
-    margin-right: 20px;
-    justify-content: space-between;
-    align-items: center;
-    /* background-color: red; */
-  }
-  
-  #find{
-    display: none;
-  }
-  
-  #return{
-    display: none;
-  }
-  .search-box{
-    position: absolute;
-    height: 35px;
-    border-radius: 5px;
-    background-color:#ebebeb;
-    display: flex;
-    right: 250px;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .search-box:hover > .search-text{
-    width: 240px;
-    padding: 0 6px;
-  }
-  
-  .search-btn{
-    float: left;
-    width: 18px;
-    height: 38px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .search-btn i{
-    outline: none;
-    text-decoration: none;
-    color: #858585;
-  }
-  
-  .search-text{
-    border: none;
-    outline: none;
-    background: none;
-    float: right;
-    font-family: 'whitney';
-    padding: 0%;
-    color: rgb(131, 131, 131);
-    transition: 0.4s;
-    line-height: 40px;
-    font-size: 12px;
-    letter-spacing: .5px;
-    width: 0;
-  }
-  
-  .icon-head{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 20px;
-    min-height: inherit;
-    justify-content: space-between;
-    padding: 12px 0;
-  }
-  
-  .icon-head:nth-child(4){
-    margin-left: -10px;
-  }
-  .icon-head i{
-    opacity: .7;
-  }
-  
-  #profile{
-    width: 18px;
-  }
-  
-  /* #pro{
-    margin-left: 7px;
-  } */
-  
-  .icon-head h5{
-    font-family: 'whitney semibold';
-    text-transform: capitalize;
-    opacity: .9;
-    letter-spacing: .3px;
-    font-weight: initial;
-    font-size:12px;
-    color: #000000;
-  }
-
- 
 .big{
   width: 100%;
   height: 92.4%;
+  margin-top: 80px;
   display: flex;
 }
 .imagecontainer{
@@ -424,14 +262,13 @@ body{
 .ipt{
     outline: none;
     border: none;
-    width: 320px;
+    width: 100%;
     text-align: start;
     font-family: 'whitney';
     letter-spacing: .2px;
     height: 55px;
     color: black;
     font-size: 15px;
-    text-transform: capitalize;
     border-radius: 5px;
     box-shadow: 0px 3px 10px  rgb(219, 219, 219);
     padding: 15px 15px;
@@ -443,14 +280,83 @@ body{
 .signUp input:not(:nth-child(1)){
     margin-top: 15px;
 }
+#passwordField{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    margin-top: 15px; 
+    width: 100%;
+    /* margin-bottom: 5px; */
+}
+#passwordInput{
+    width: 85%;
+}
+#passwordEye{
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    display: flex;
+    box-shadow: 0px 3px 10px  rgb(219, 219, 219);
+    align-items: center;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    justify-content: center;    
+}
+#passwordField i{
+    font-size: 20px;
+}
+#signUpForm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#passEyeOpen{
+    display: none;
+}
+#passEyeOpen, #passEyeClose{
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    cursor: pointer;
+}
 
+/*-------------------------------------------------------- Password Stregnth -------------------------------------------------------------*/
+
+#message {
+    display: none;
+    width: 95%;
+    height: 10px;
+    align-items: center;
+    font-family: 'whitney';
+    color: #000;
+    margin-top: 7px;
+  }
+  #messageMain{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  #message h6{
+      font-weight: 400;
+  }
+  #message p {
+    font-size: 12px;
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: #0066FF;
+  }
+  /* Add a red text color and an "x" when the requirements are wrong */
+  .invalid {
+    color: #F16565;
+  } 
+/*-------------------------------------------------------- Password Stregnth End -------------------------------------------------------------*/
 .signUp #hidden{
     margin-top:-10px;
     display: none;
 }
 
 .gender{
-    width: 320px;
+    width: 100%;
     display: flex;
     height: 55px;
     box-shadow: 0px 3px 10px   rgb(219, 219, 219);
@@ -563,6 +469,15 @@ input[type=radio] {
 }
 
 @media(max-width:360px){
+    .big{
+        margin-top: 0px;
+    }
+    #passwordField{
+        width: 80% !important;
+    }
+    #passwordInput{
+        width: 95% !important;
+    }
     #rc{
         display: none;
     }
@@ -572,17 +487,14 @@ input[type=radio] {
     .palletoverlay{
         width: 400px;
     }
-    
     .ipt{
-        width: 260px;
-        margin-left: 30px;
+        width: 95%;
     }
     .gender{
-        width: 260px;
-        margin-left: 30px;
+        width: 95%;
     }
     .gender h5{
-        margin-left: 13px;
+        margin-left: 10px;
     }
     .welcome{
         top: 20px;
@@ -592,9 +504,14 @@ input[type=radio] {
     }
 }
 @media(max-width:375px){
-    .ipt{
-        width: 260px;
-        margin-left: 30px;
+    .big{
+        margin-top: 0px;
+    }
+    #passwordField{
+        width: 100% !important;
+    }
+    #passwordInput{
+        width: 100% !important;
     }
     .palletoverlay{
         height: 420px;
@@ -608,12 +525,8 @@ input[type=radio] {
    #rc1{
        bottom: -10%;
    }
-    .gender{
-        width: 260px;
-        margin-left: 30px;
-    }
     .gender h5{
-        margin-left: 13px;
+        margin-left: 10px;
     }
     .sign{
         padding: 0px 16px;
@@ -622,6 +535,15 @@ input[type=radio] {
 
 
 @media(max-width:393px){
+    .big{
+        margin-top: 0px;
+    }
+    #passwordField{
+        width: 80%;
+    }
+    #passwordInput{
+        width: 85%;
+    }
     .imagecontainer{
         display: none;
     }
@@ -664,6 +586,15 @@ input[type=radio] {
   
 }
 @media(max-width:411px){
+    .big{
+        margin-top: 0px;
+    }
+    #passwordField{
+        width: 80%;
+    }
+    #passwordInput{
+        width: 85%;
+    }
     .imagecontainer{
         display: none;
     }
@@ -712,6 +643,15 @@ input[type=radio] {
 
 }
 @media(max-width:16cm){
+    .big{
+        margin-top: 0px;
+    }
+    #passwordField{
+        width: 80%;
+    }
+    #passwordInput{
+        width: 85%;
+    }
     .imagecontainer{
         display: none;
     }
@@ -758,6 +698,16 @@ input[type=radio] {
 }
 
 @media(max-width:20cm){
+    .big{
+        margin-top: 0px;
+    }
+    #passwordField{
+        width: 100%;
+    }
+    #passwordInput{
+        width: 100%;
+    }
+    
     .imagecontainer{
         display: none;
     }
@@ -791,8 +741,12 @@ input[type=radio] {
     .sign{
         padding: 0px 16px;
     }
-   
-  
-
+   #passwordEye{
+       height: 45px !important;
+       width: 35px;
+   }
+   #passwordField{
+       justify-content: initial;
+   }
 }
 

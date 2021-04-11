@@ -21,6 +21,13 @@ html,body{
     padding-top: 40px;
     padding-left: 150px;
     padding-right: 150px;
+    margin-top: 80px;
+}
+#mainContent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'whitney';
 }
 #Head{
     width: 1005;
@@ -65,7 +72,6 @@ html,body{
     font-weight: 400;
 }
 #Content p{
-    margin-top: 20px;
     text-align: center;
     font-family: 'whitney';
     font-size: 14px;
@@ -73,6 +79,21 @@ html,body{
     color: #6d6d6d;
     font-weight: 400;
     letter-spacing: 1px;
+}
+.Head{
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #000000;
+  font-weight: 600;
+  margin-top: 30px;
+  text-align: center;
+}
+.subHead{
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #3a3737;
 }
 #mobNav{
     display: none;
@@ -90,7 +111,7 @@ html,body{
 }
   #Content{
     padding: 15px;
-    margin-top: 90px;
+    margin-top: 0px;
   }
   #goBack h4, #icon{
     display: none;
@@ -104,6 +125,7 @@ html,body{
   }
   #Content p{
     font-size: 16px;
+    text-align: center;
   }
 }
 
@@ -119,7 +141,7 @@ html,body{
 }
   #Content{
     padding: 15px;
-    margin-top: 90px;
+    margin-top: 0px;
   }
   #goBack h4, #icon{
     display: none;
@@ -148,7 +170,7 @@ html,body{
 }
   #Content{
     padding: 15px;
-    margin-top: 90px;
+    margin-top: 0px;
   }
   #goBack h4, #icon{
     display: none;
@@ -177,7 +199,7 @@ html,body{
 }
   #Content{
     padding: 15px;
-    margin-top: 90px;
+    margin-top: 0px;
   }
   #goBack h4, #icon{
     display: none;

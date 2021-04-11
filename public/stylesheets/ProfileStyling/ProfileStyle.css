@@ -13,10 +13,11 @@ html,body{
     min-width: 100%;
     scroll-behavior: smooth;
     height: 100%;
+    margin-top: 80px;
 }
 #mainPage{
     width: 100%;
-    height: calc(100% - 60px);
+    min-height: calc(100% - 60px);
     padding-left: 140px;
     padding-right: 160px;
     padding-top: 40px;
@@ -142,6 +143,7 @@ html,body{
   font-family: 'whitney htf semibold';
   font-size: 16px;
   letter-spacing: 0.5px;
+  margin-bottom: 10px;
   text-decoration: none;
 }
 #mobNav{
@@ -156,13 +158,14 @@ html,body{
     max-width: 100%;
     height: calc(100% - 52px);
     scroll-behavior: smooth;
+    margin-top: 0px;
     /* overflow: hidden; */
 }
 #webNav{
  display: none;
 }
 #mainPage{
-  padding: 70px 0px 0px 0px !important;
+  padding: 20px 0px 0px 0px !important;
   scroll-behavior: smooth;
   min-height: 100%;
   }
@@ -220,6 +223,7 @@ html,body{
     max-width: 100%;
     height: calc(100% - 52px);
     scroll-behavior: smooth;
+    margin-top: 0px;
     /* overflow: hidden; */
 }
 #mobTabs{
@@ -287,6 +291,7 @@ html,body{
     max-width: 100%;
     height: calc(100% - 52px);
     scroll-behavior: smooth;
+    margin-top: 0px;
     /* overflow: hidden; */
 }
 #mobTabs{
@@ -354,6 +359,7 @@ html,body{
     max-width: 100%;
     height: calc(100% - 52px);
     scroll-behavior: smooth;
+    margin-top: 0px;
     /* overflow: hidden; */
 }
 #mobTabs{
@@ -363,7 +369,7 @@ html,body{
  display: none;
 }
 #mainPage{
-  padding: 70px 0px 0px 0px !important;
+  padding: 20px 0px 0px 0px !important;
   scroll-behavior: smooth;
   min-height: 100%;
   }

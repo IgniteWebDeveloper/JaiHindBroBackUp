@@ -26,18 +26,19 @@
                 <div id="btns">
                     <div id="btnsTop">
                         <div id="btnsTtop">
-                            <button><img src="../images/loginimages/Icon awesome-facebook-square.svg" alt="">FACEBOOK</button>
-                            <button><img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="">GOOGLE</button>
+                            <a id="facebookBtn" href="/google" ><img src="../images/loginimages/Icon awesome-facebook-square.svg" alt="">FACEBOOK</a>
+                            <a id="googleBtn" href="/facebook"><img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="">GOOGLE</a>
                         </div>
                         <div id="btnsTbottom">
-                            <a href="/log-in-with-password">
-                                <button>SIGN IN WITH PASSWORD</button>
-                            </a>
+                            <a href="/log-in-with-password">SIGN IN WITH PASSWORD</a>
                         </div>
                     </div>
                     <div id="btnsMid">
                         <div id="leftL"></div><h5>OR</h5><div id="rightL"></div>
                     </div>
+                    <form id="signInForm" action="/sign-up" method="GET">
+                        <input type="hidden" name="phonenumber" value="<%=phonenumber%>">
+                    </form>
                     <div id="btnsBottom">
                         <a href="/sign-up">
                             <button><img src="../images/otpimage/Group 1.png" alt="">CREATE NEW ACCOUNT</button>

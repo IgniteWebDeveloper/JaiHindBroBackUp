@@ -83,8 +83,11 @@ router.get('/log-in-with-password', function(req, res){
 });
 
 router.get('/sign-up',function(req,res){
-  res.render('signUp',{phonenumber:req.body.phonenumber})
+  console.log(req.query.phonenumber)
+  res.render('signUp',{phonenumber:req.query.phonenumber})
 })
+
+
 router.get('/profile',function(req, res) {
     res.render('Profile', {
         user: req.user
@@ -397,18 +400,16 @@ function isLoggedIn(req,res,next){
   }
 };
 
-
-
 // -----------------------------------------Forgotten Password--------------------------------------------
 
 router.get('/forgot-password', function(req , res){
-  res.render('Forgot.ejs');
+  res.render('Forgot');
 });
 
 // -----------------------------------------Forgot Password 2--------------------------------------------
 
 router.get('/create-new-password', function(req , res){
-  res.render('ForgotPassword2.ejs');
+  res.render('ForgotPassword2');
 });
 
 // // -----------------------------------------Sign Up--------------------------------------------
@@ -471,32 +472,131 @@ router.get('/terms-of-use', function(req, res){
 // // -----------------------------------------Privacy Policy--------------------------------------------
 
 router.get('/privacy-policy', function(req, res){
-  res.render('privacyPolicy');
-});
+    res.render('privacyPolicy');
+  });
 
-// // -----------------------------------------HomePage--------------------------------------------
+  // // -----------------------------------------HomePage--------------------------------------------
 
-router.get('/homepage', function(req, res){
-  res.render('homePage');
-});
+  router.get('/homepage', function(req, res){
+    res.render('homePage');
+  });
 
-// // -----------------------------------------Products--------------------------------------------
+  // // -----------------------------------------Products--------------------------------------------
 
-router.get('/products', function(req, res){
-  res.render('products');
-});
+  router.get('/products', function(req, res){
+    res.render('products');
+  });
 
-// // -----------------------------------------Products Inner Page--------------------------------------------
+  // // -----------------------------------------Products Inner Page--------------------------------------------
 
-router.get('/productInner', function(req, res){
-  res.render('productInner');
-});
+  router.get('/productInner', function(req, res){
+    res.render('productInner');
+  });
 
-// // -----------------------------------------wishlist Page--------------------------------------------
+  // // -----------------------------------------wishlist Page--------------------------------------------
 
-router.get('/wishlist', function(req, res){
-  res.render('wishlist');
-});
+  router.get('/wishlist', function(req, res){
+    res.render('wishlist');
+  }); 
+
+// // -----------------------------------------Forgotten Password--------------------------------------------
+
+// router.get('/forgot-password', function(req , res){
+//   res.render('Forgot');
+// });
+
+// // -----------------------------------------Forgot Password 2--------------------------------------------
+
+// router.get('/create-new-password', function(req , res){
+//   res.render('ForgotPassword2');
+// });
+
+// // // -----------------------------------------Sign Up--------------------------------------------
+
+// router.get('/sign-up', function(req, res){
+//   res.render('signUp');
+// });
+
+// // // -----------------------------------------Sign In--------------------------------------------
+
+// router.get('/sign-in', function(req, res){
+//   res.render('signIn');
+// });
+
+
+// // // -----------------------------------------Log In With Password--------------------------------------------
+
+
+
+// // // -----------------------------------------cart--------------------------------------------
+// router.get('/bag', function(req, res){
+//   res.render('Cart');
+// });
+
+// router.get('/add-address', function(req, res){
+//   res.render('Address_Cart');
+// });
+
+
+// // // -----------------------------------------User - Profile--------------------------------------------
+
+// router.get('/user-profile', function(req, res){
+//   res.render('Profile');
+// });
+
+// // // -----------------------------------------edit - Profile--------------------------------------------
+
+// router.get('/edit-profile', function(req, res){
+//   res.render('edit_Profile');
+// });
+
+// // // -----------------------------------------Orders - done--------------------------------------------
+
+// router.get('/Orders', function(req, res){
+//   res.render('Orders');
+// });
+
+// // // -----------------------------------------Contact Us--------------------------------------------
+
+// router.get('/contact-us', function(req, res){
+//   res.render('ContactUs');
+// });
+
+// // // -----------------------------------------Terms Of Use--------------------------------------------
+
+// router.get('/terms-of-use', function(req, res){
+//   res.render('termsOfUse');
+// });
+
+// // // -----------------------------------------Privacy Policy--------------------------------------------
+
+// router.get('/privacy-policy', function(req, res){
+//     res.render('privacyPolicy');
+//   });
+
+//   // // -----------------------------------------HomePage--------------------------------------------
+
+//   router.get('/homepage', function(req, res){
+//     res.render('homePage');
+//   });
+
+//   // // -----------------------------------------Products--------------------------------------------
+
+//   router.get('/products', function(req, res){
+//     res.render('products');
+//   });
+
+//   // // -----------------------------------------Products Inner Page--------------------------------------------
+
+//   router.get('/productInner', function(req, res){
+//     res.render('productInner');
+//   });
+
+//   // // -----------------------------------------wishlist Page--------------------------------------------
+
+//   router.get('/wishlist', function(req, res){
+//     res.render('wishlist');
+//   }); 
 
 
 module.exports = router;

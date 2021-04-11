@@ -66,23 +66,10 @@
                             <input class="InputFields" type="text" value="Lorem Ipsum" placeholder="Enter Your Full Name*">
                             <h6 class="inputTag">Email</h6>
                             <input class="InputFields" type="text" value="forexpample@gmail.com" placeholder="Enter Your Mobile Number*">
-                            <h6 class="inputTag">Gender</h6>
-                            <div style="display: flex; align-items: center;padding: 0px;" class="InputFields">
-                                <div id="male">
-                                    <input id="maleCheckbox" type="radio" checked name="gender" id="male"> 
-                                    <label for="m">Male</label>
-                                </div>
-                                <div id="female">
-                                    <input type="radio" name="gender" id="female"> 
-                                    <label for="f">Female</label>
-                                </div>
-                            </div>
                             <h6 class="inputTag">Pin Code</h6>
                             <input class="InputFields" type="text" value="462001" placeholder="Enter Your Pin Code*">
                             <h6 class="inputTag">Address</h6>
-                            <input class="InputFields" type="text" placeholder="Address (House No, Building, Street, Area)**">
-                            <h6 class="inputTag">Locality</h6>
-                            <input class="InputFields" type="text" placeholder="Enter Your Locality*">
+                            <input class="InputFields" type="text" placeholder="Enter your complete address (House No, Building, Street, Area)**">
                             <div id="stateCity">
                                 <select onchange="print_city('state', this.selectedIndex);" id="sts" name ="stt" class="form-control" required></select>
                                 <select id ="state" class="form-control" required></select>
@@ -95,6 +82,7 @@
             </div>
         </div>
     </div>
+<% include ./mobFooter/mobFooter.ejs %>
 </div>
 <script src="../javascripts/cities.js"></script>
 <script language="javascript">print_state("sts");</script>

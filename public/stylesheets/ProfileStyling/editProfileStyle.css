@@ -13,10 +13,11 @@ html,body{
     min-width: 100%;
     scroll-behavior: smooth;
     height: 100%;
+    margin-top: 80px;
 }
   #mainPage{
     width: 100%;
-    height: calc(100% - 60px);
+    min-height: calc(100% - 60px);
     padding-left: 140px;
     padding-right: 160px;
     padding-top: 40px;
@@ -267,6 +268,7 @@ html,body{
   border: 1px solid #d4d5d9;
   color: black;
   margin-top: 15px;
+  margin-bottom: 10px;
 }
 #mobNav{
     display: none;
@@ -279,12 +281,13 @@ html,body{
     height: calc(100% - 52px);
     scroll-behavior: smooth;
     /* overflow: hidden; */
+    margin-top: 0px;
 }
 #webNav{
  display: none;
 }
 #mainPage{
-  padding: 70px 0px 0px 0px !important;
+  padding: 20px 0px 0px 0px !important;
   scroll-behavior: smooth;
   min-height: 100%;
   }
@@ -363,12 +366,13 @@ html,body{
     height: calc(100% - 52px);
     scroll-behavior: smooth;
     /* overflow: hidden; */
+    margin-top: 0px;
 }
 #webNav{
  display: none;
 }
 #mainPage{
-  padding: 70px 0px 0px 0px !important;
+  padding: 20px 0px 0px 0px !important;
   scroll-behavior: smooth;
   min-height: 100%;
   }
@@ -447,12 +451,13 @@ html,body{
     height: calc(100% - 52px);
     scroll-behavior: smooth;
     /* overflow: hidden; */
+    margin-top: 0px;
 }
 #webNav{
  display: none;
 }
 #mainPage{
-  padding: 70px 0px 0px 0px !important;
+  padding: 20px 0px 0px 0px !important;
   scroll-behavior: smooth;
   min-height: 100%;
   }
@@ -531,12 +536,13 @@ html,body{
     height: calc(100% - 52px);
     scroll-behavior: smooth;
     /* overflow: hidden; */
+    margin-top: 0px;
 }
 #webNav{
  display: none;
 }
 #mainPage{
-  padding: 70px 0px 0px 0px !important;
+  padding: 20px 0px 0px 0px !important;
   scroll-behavior: smooth;
   min-height: 100%;
   }

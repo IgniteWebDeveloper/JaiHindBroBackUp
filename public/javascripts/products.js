@@ -78,3 +78,31 @@ optionsList.forEach(o => {
     optionsContainer.classList.remove("active");
   });
 });
+
+
+var add_to_wish_border = document.querySelector('#add_to_wish_border');
+var add_to_wish_fill = document.querySelector('.add_to_wish_fill');
+
+
+// add_to_wish_border.addEventListener('click', function(){
+//   add_to_wish_fill.style.display = 'initial';
+//   add_to_wish_border.style.display = 'none';
+// })
+
+
+// document.querySelectorAll('.add_to_wish_border').forEach(item => {
+//   item.addEventListener('click', event => {
+//     add_to_wish_fill.style.display = 'initial';
+//     add_to_wish_border.style.display = 'none';
+//   })
+// });
+
+function saved(){
+  // var add_to_wish_border = document.querySelector('#add_to_wish_border');
+var add_to_wish_fill = document.querySelector('.add_to_wish_fill');
+if(add_to_wish_fill.style.display === 'none'){
+    add_to_wish_fill.style.display = 'initial'
+}else{
+  add_to_wish_fill.style.display === 'none'
+}
+}

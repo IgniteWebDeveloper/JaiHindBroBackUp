@@ -30,12 +30,8 @@
                 <a href="/"><button id="btn2" >Sign Up</button></a>
             </div> 
             <div class="sign">
-                <a href="/auth/facebook">
-                <button class="facebook"><img id="facebook" src="../images/loginimages/Icon awesome-facebook-square.svg" alt=""><h5>facebook</h5></button>
-                </a>
-                <a href="/google">
-                <button class="google"><img id="google" src="https://img.icons8.com/color/48/000000/google-logo.png" alt=""><h5>google</h5></button>
-                </a>
+                <a href="/auth/facebook" class="facebook"><img id="facebook" src="../images/loginimages/Icon awesome-facebook-square.svg" alt=""><h5>facebook</h5></a>
+                <a href="/google" class="google"><img id="google" src="https://img.icons8.com/color/48/000000/google-logo.png" alt=""><h5>google</h5></a>
              </div>
              <div class="or">
             </div>
@@ -45,7 +41,20 @@
                       <input id="hidden" type="tel" name="username" value="<%=phonenumber%>">
                       <input class="ipt"name="fullname" type="text"  placeholder="Full Name">
                       <input class="ipt" name="email" type="text" placeholder="Email">
-                      <input class="ipt" name="password" type="password" placeholder="Create Password">
+                        <div id="passwordField">
+                      <input id="passwordInput" type="password" class="ipt" name="password" minlength="8" maxlength="15" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[!@#\$%\^&\*])(?=.*[A-Z]).{8,}" required ><div id="passwordEye"><i id="passEyeOpen" onclick="myFunction()" class="ri-eye-line"></i><i id="passEyeClose" onclick="myFunction()" class="ri-eye-off-line"></i></div>
+                        </div>
+                        <input style="display: none;"  id="submit" type="submit" value="Submit">
+                        <div id="message">
+                        <h6>Must contain 8 characters with:</h6>
+                          <div id="messageMain">
+                          <p id="letter" class="invalid">lowercase</p>
+                          <p id="capital" class="invalid">UPPERCASE</p>
+                          <p id="number" class="invalid">number</p>
+                          <p id="special_character" class="invalid">Special_Character</p>
+                         
+                        </div>
+                        </div>
                       <div class="gender">
                           <h5>Select Gender :-</h5>
                           <input id="radio1" type="radio" id="male" name="gender" value="male">
@@ -66,10 +75,99 @@
     <script>
         var signUpForm = document.querySelector('#signUpForm');
         var continueBtn = document.querySelector('#continue');
+        var submit =  document.querySelector('#submit')
 
         continueBtn.addEventListener('click', function(){
+           submit.click()
             signUpForm.submit();
         });
+
+var myInput = document.getElementById("passwordInput");
+var letter = document.getElementById("letter");
+var capital = document.getElementById("capital");
+var number = document.getElementById("number");
+var length = document.getElementById("length");
+var special_character = document.getElementById("special_character");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "initial";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate lowercase letters
+  var lowerCaseLetters = /[a-z]/g;
+  if(myInput.value.match(lowerCaseLetters)) {  
+    letter.classList.remove("invalid");
+    letter.classList.add("valid");
+  } else {
+    letter.classList.remove("valid");
+    letter.classList.add("invalid");
+  }
+  
+  // Validate capital letters
+  var upperCaseLetters = /[A-Z]/g;
+  if(myInput.value.match(upperCaseLetters)) {  
+    capital.classList.remove("invalid");
+    capital.classList.add("valid");
+  } else {
+    capital.classList.remove("valid");
+    capital.classList.add("invalid");
+  }
+
+  // Validate numbers
+  var numbers = /[0-9]/g;
+  if(myInput.value.match(numbers)) {  
+    number.classList.remove("invalid");
+    number.classList.add("valid");
+  } else {
+    number.classList.remove("valid");
+    number.classList.add("invalid");
+  }
+
+   // special character
+   var  special_characters = /[!@#\$%\^&\*]/g;
+   if(myInput.value.match(special_characters)) {  
+     special_character.classList.remove("invalid");
+     special_character.classList.add("valid");
+   } else {
+      special_character.classList.remove("valid");
+      special_character.classList.add("invalid");
+   }
+  
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+
+        function myFunction() {
+        var passEyeOpen = document.querySelector('#passEyeOpen');
+        var passEyeClose = document.querySelector('#passEyeClose');
+        var x = document.querySelector("#passwordInput");
+      if (x.type === "password") {
+      x.type = "text";
+      passEyeOpen.style.display = 'initial';
+      passEyeClose.style.display = 'none';
+        } else {
+            passEyeOpen.style.display = 'none';
+            passEyeClose.style.display = 'initial';
+            x.type = "password";
+  }
+}
+
+ 
+      
     </script>
 </body>
 </html>

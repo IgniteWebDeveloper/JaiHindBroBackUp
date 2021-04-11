@@ -20,6 +20,7 @@ html,body{
 #mainPage{
     display: flex;
     width: 100%;
+    margin-top: 80px;
     height: calc(100% - 60px);
     /* padding-left: 140px; */
     /* padding-right: 160px; */
@@ -183,7 +184,7 @@ html,body{
   height: 45%;
   /* background-color: pink; */
 }
-#btnsTtop button:nth-child(1){
+#googleBtn{
     display: flex;
     outline: none;
     height: 40px;
@@ -206,7 +207,7 @@ html,body{
   height: 45%;
   /* background-color: pink; */
 }
-#btnsTtop button:nth-child(2){
+#facebookBtn{
 display: flex;
 outline: none;
 height: 40px;
@@ -223,11 +224,15 @@ font-family: 'whitney';
     font-weight: 600;
     color: #717171;
 }
-#btnsTtop button:nth-child(2)>img{
+#facebookBtn>img{
   width: 25px;
   height: 25px;
 }
-#btnsTbottom button{
+#googleBtn>img{
+  width: 25px;
+  height: 25px;
+}
+#btnsTbottom a{
   display: flex;
   outline: none;
   height: 40px;
@@ -315,7 +320,17 @@ font-family: 'whitney';
 }
 #mainPage{
     height: 103%;
-    /* margin-top: 56px; */
+    margin-top: 0px;
+}
+#btnsTop{
+  padding: 0px 15px;
+}
+#btnsBottom button{
+  padding: 0px 10px;
+  justify-content: center;
+}
+#signInbtn>img{
+  margin-right: 10px;
 }
 #left{
     display: none;
@@ -361,7 +376,17 @@ width: 131px;
 }
 #mainPage{
     height: 103%;
-    /* margin-top: 56px; */
+    margin-top: 0px;
+}
+#btnsTop{
+  padding: 0px 15px;
+}
+#btnsBottom button{
+  padding: 0px 10px;
+  justify-content: center;
+}
+#signInbtn>img{
+  margin-right: 10px;
 }
 #left{
     display: none;
@@ -407,7 +432,17 @@ width: 131px;
 }
 #mainPage{
     height: 103%;
-    /* margin-top: 56px; */
+    margin-top: 0px;
+}
+#btnsTop{
+  padding: 0px 15px;
+}
+#btnsBottom button{
+  padding: 0px 10px;
+  justify-content: center;
+}
+#signInbtn>img{
+  margin-right: 10px;
 }
 #left{
     display: none;
@@ -453,7 +488,17 @@ width: 131px;
 }
 #mainPage{
     height: 103%;
-    /* margin-top: 56px; */
+    margin-top: 0px;
+}
+#btnsTop{
+  padding: 0px 15px;
+}
+#btnsBottom button{
+  padding: 0px 10px;
+  justify-content: center;
+}
+#signInbtn>img{
+  margin-right: 10px;
 }
 #left{
     display: none;
@@ -499,7 +544,17 @@ width: 131px;
 }
 #mainPage{
     height: 103%;
-    /* margin-top: 56px; */
+    margin-top: 0px;
+}
+#btnsTop{
+  padding: 0px 15px;
+}
+#btnsBottom button{
+  padding: 0px 10px;
+  justify-content: center;
+}
+#signInbtn>img{
+  margin-right: 10px;
 }
 #left{
     display: none;
@@ -545,7 +600,17 @@ width: 131px;
 }
 #mainPage{
     height: 103%;
-    /* margin-top: 56px; */
+    margin-top: 0px;
+}
+#btnsTop{
+  padding: 0px 15px;
+}
+#btnsBottom button{
+  padding: 0px 10px;
+  justify-content: center;
+}
+#signInbtn>img{
+  margin-right: 10px;
 }
 #left{
     display: none;
